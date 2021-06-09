@@ -33,6 +33,13 @@ namespace Hire_me_v2.HireMe.Pages_Admin
             string update = "update tb_university set university_name='" + new_name_university.Text + "' where university_name='" + DropDown_university.SelectedValue + "'";
             ds.EX_Non_Query(update);
             ds.close_connection();
+            //---------
+            string q = "select university_name from tb_university";
+            var ministry_n = ds.SelectData(q);
+            DropDown_university.DataSource = ministry_n;
+            DropDown_university.DataValueField = "university_name";
+            DropDown_university.DataTextField = "university_name";
+            DropDown_university.DataBind();
         }
 
         protected void btn_remove_Click(object sender, EventArgs e)
@@ -42,6 +49,13 @@ namespace Hire_me_v2.HireMe.Pages_Admin
             string remove = "delete from tb_university where university_name='" + DropDown_university.SelectedValue + "'";
             ds.EX_Non_Query(remove);
             ds.close_connection();
+            //-------
+            string q = "select university_name from tb_university";
+            var ministry_n = ds.SelectData(q);
+            DropDown_university.DataSource = ministry_n;
+            DropDown_university.DataValueField = "university_name";
+            DropDown_university.DataTextField = "university_name";
+            DropDown_university.DataBind();
         }
 
         protected void btn_back_Click(object sender, EventArgs e)

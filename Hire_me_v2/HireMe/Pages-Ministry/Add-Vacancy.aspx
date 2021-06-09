@@ -41,6 +41,7 @@
                         <img src="../image/logo-hire-me.png" />
                     </header>
                     <br />
+                    <asp:Label ID="lab_error" runat="server" Font-Size="25px" ForeColor="Red" Text="*"></asp:Label>
                     <br />
 
                     <section class="post-document">

@@ -22,6 +22,15 @@ namespace Hire_me_v2.HireMe.Pages_Universities {
         protected global::System.Web.UI.HtmlControls.HtmlForm form_Send_Message;
         
         /// <summary>
+        /// lab_error control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lab_error;
+        
+        /// <summary>
         /// txt_message control.
         /// </summary>
         /// <remarks>

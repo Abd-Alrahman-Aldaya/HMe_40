@@ -18,6 +18,37 @@ namespace HireMe.Pages_Ministry
         }
         protected void function_btn_Create_Account_new(object sender, EventArgs e)
         {
+            C_HireMe check = new C_HireMe();
+
+            if (check.check_string(name_ministry_new.Text) == false)
+            {
+                lab_error.Text = "input null or contain(-,<,;)";
+                return;
+            }
+            if(check.check_string (email_ministry_new.Text)==false)
+                    {
+                lab_error.Text = "input null or contain(-,<,;)";
+                return;
+                    }
+            if(check.check_string ( pass_ministry_new.Text)==false)
+                        {
+                lab_error.Text = "input null or contain(-,<,;)";
+                return;
+                        }
+            if(check.check_string ( confirm_pass_ministry_new.Text)==false)
+                            {
+                lab_error.Text = "input null or contain(-,<,;)";
+                return;
+                            }
+            if(check.check_string ( phone_ministry_new.Text)==false)
+                                {
+                lab_error.Text = "input null or contain(-,<,;)";
+                return;
+                                }
+            
+
+
+
             ds = new Data_Access();
             string min_name = name_ministry_new.Text;
             string q_insert_info = "insert into tb_ministry (ministry_name,ministry_email,ministry_password) values('" + min_name+ "','"+ email_ministry_new .Text+ "','"+ pass_ministry_new .Text+ "')";
@@ -34,6 +65,9 @@ namespace HireMe.Pages_Ministry
             pass_ministry_new.Text = null;
             confirm_pass_ministry_new.Text = null;
             phone_ministry_new.Text = null;
+            
+            lab_error.Text = " ";
+          //  Response.Redirect("~/HireMe/Pages-Ministry/Add-Vacancy.aspx");
 
         }
     }

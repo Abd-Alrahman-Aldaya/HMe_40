@@ -40,7 +40,9 @@
                    </header>
                     
 
-                    <h3 class="title-login"><i class="fa fa-chevron-left icon" ></i>  بيانات الشخصية </h3>
+                    <h3 class="title-login"><i class="fa fa-chevron-left icon" ></i>  بيانات الشخصية 
+                        <asp:Label ID="lab_error" runat="server" Font-Size="25px" ForeColor="Red" Text="*"></asp:Label>
+                    </h3>
 
                     <div class="post-document">
                         <div class="colume1">
@@ -83,7 +85,7 @@
                              <div class="post-login">
                                 <span class="icon"><i class="fas fa-lock"></i></span>
                                 <span class="title-input">رقم الوطني</span>
-                                <asp:TextBox ID="id_number_gradute" CssClass="input" TextMode="Password" AutoCompleteType="Disabled" MaxLength="20" runat="server"></asp:TextBox>                                
+                                <asp:TextBox ID="id_number_gradute" CssClass="input" TextMode="Number" AutoCompleteType="Disabled" MaxLength="20" runat="server"></asp:TextBox>                                
                                 <span class="span-bottom"></span>
                             </div>
 
@@ -135,7 +137,7 @@
                             <div class="post-login">
                                 <span class="icon"><i class="fas fa-th-list"></i></span>
                                 <span class="title-input">الاختصاص </span>
-                               <%-- <asp:TextBox ID="specialization_gradute" CssClass="input" AutoCompleteType="Disabled" runat="server"></asp:TextBox>                            --%>
+                                <%-- <asp:TextBox ID="specialization_gradute" CssClass="input" AutoCompleteType="Disabled" runat="server"></asp:TextBox>                            --%>
                                  <asp:DropDownList ID="DDL_specialization_gradute" CssClass="drop_level" runat="server">
                                        
                                 </asp:DropDownList>
@@ -184,6 +186,7 @@
                     <div class="post-document btn">    
 
                             <button runat="server" id="btn_to_next_gradute" class="button" onserverclick="function_Update_Account" title="Creare_Account" ><i class="fa fa-caret-left icon-btn" style="font-size:20px; margin-left:2%;"></i> تعديل </button>
+                            <br />
                     </div>
                             
 
@@ -197,8 +200,12 @@
                 </div>
             </footer>
 
-        </div>
+            <br />
+            l</div>
     </form>
+
+    <p class="title-footer">
+        &nbsp;</p>
 
 </body>
 </html>

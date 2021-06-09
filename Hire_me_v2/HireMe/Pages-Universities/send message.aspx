@@ -38,7 +38,8 @@
                        <h1 class="title-post" style="font-size:40px">إرسال رسالة نصية</h1>
                    </header>
 
-                    <h3 class="title-login"><i class="fa fa-chevron-left icon" ></i>  اكتب الرسالة</h3>
+                    <h3 class="title-login"><i class="fa fa-chevron-left icon" ></i>  اكتب الرسالة<asp:Label ID="lab_error" runat="server" Font-Size="25px" ForeColor="Red" Text="*"></asp:Label>
+                    </h3>
 
                     <section class="post-document" style="width:60%;">
 

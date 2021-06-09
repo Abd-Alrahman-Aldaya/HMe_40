@@ -86,6 +86,9 @@
                               <asp:ListItem Value="raqa">الرقة</asp:ListItem>
                           </asp:DropDownList><br /><br />
                           <input type="submit" class="btn-info" value="تأكيد" onclick="confirmpassword()"  runat="server" onserverclick="sing_in_univarsity" />
+                           <br />
+                           <br />
+                           <label id ="lab_error" style ="color:red; font-size:30px" runat="server">  </label>
                           </form>
                   </div>
               </div>

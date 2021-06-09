@@ -83,7 +83,7 @@
                              <div class="post-login">
                                 <span class="icon"><i class="fas fa-lock"></i></span>
                                 <span class="title-input">رقم الوطني</span>
-                                <asp:TextBox ID="id_number_gradute" CssClass="input" TextMode="Password" AutoCompleteType="Disabled" MaxLength="20" runat="server"></asp:TextBox>                                
+                                <asp:TextBox ID="id_number_gradute" CssClass="input" TextMode="Number" AutoCompleteType="Disabled" MaxLength="20" runat="server"></asp:TextBox>                                
                                 <span class="span-bottom"></span>
                             </div>
 
@@ -135,7 +135,7 @@
                             <div class="post-login">
                                 <span class="icon"><i class="fas fa-th-list"></i></span>
                                 <span class="title-input">الاختصاص </span>
-                               <%-- <asp:TextBox ID="specialization_gradute" CssClass="input" AutoCompleteType="Disabled" runat="server"></asp:TextBox>                            --%>
+                                <%-- <asp:TextBox ID="specialization_gradute" CssClass="input" AutoCompleteType="Disabled" runat="server"></asp:TextBox>                            --%>
                                  <asp:DropDownList ID="DDL_specialization_gradute" CssClass="drop_level" runat="server">
                                        
                                 </asp:DropDownList>
@@ -146,7 +146,7 @@
                              <div class="post-login">
                                 <span class="icon"><i class="fas fa-th-list"></i></span>
                                 <span class="title-input">المعدل </span>
-                                <asp:TextBox ID="avg_gradute" CssClass="input" AutoCompleteType="Disabled" runat="server"></asp:TextBox>                            
+                                <asp:TextBox ID="avg_gradute" CssClass="input" AutoCompleteType="Disabled" runat="server" TextMode="Number"></asp:TextBox>                            
                                 <span class="span-bottom"></span>
                             </div>
                             <br />
@@ -204,6 +204,8 @@
 
                     <div class="post-document btn">                        
                             <button runat="server" id="btn_to_next_gradute" class="button" onserverclick="function_Create_Account_Next" title="Creare_Account" ><i class="fa fa-caret-left icon-btn" style="font-size:20px; margin-left:2%;"></i> التالي </button>
+                            <br />
+                            <asp:Label ID="lab_error" runat="server" Font-Size="25px" ForeColor="Red" Text=" *"></asp:Label>
                     </div>
                             
 

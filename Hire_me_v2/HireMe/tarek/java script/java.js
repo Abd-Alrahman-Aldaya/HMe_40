@@ -131,3 +131,59 @@ function confirmpassword() {
     }
 
 }
+
+
+let m = 0;
+$(".sor").click(function () {
+    if (m == 0) {
+        $(".fu1").fadeIn(1000);
+        $(".gradvi").fadeOut(1000);
+        m = 1;
+    }
+    else if (m == 1) {
+        $(".fu1").fadeOut(1000);
+        m = 0;
+    }
+
+
+});
+let sm = 0;
+$(".cn1").click(function () {
+    if (sm == 0) {
+        $(".count2").fadeIn(1000);
+        sm = 1;
+    }
+    else if (sm == 1) {
+        $(".count2").fadeOut(1000);
+        sm = 0;
+    }
+
+
+});
+let sm2 = 0;
+$(".cn3").click(function () {
+    if (sm2 == 0) {
+        $(".count3").fadeIn(1000);
+        sm2 = 1;
+    }
+    else if (sm2 == 1) {
+        $(".count3").fadeOut(1000);
+        sm2 = 0;
+    }
+
+
+});
+let min = 0;
+$(".count3 .bn1").click(function () {
+    if (min == 0) {
+        $(".gradvi").fadeIn(1000);
+        $(".fu1").fadeOut(1000);
+        sm2 = 1;
+    }
+    else if (min == 1) {
+        $(".gradvi").fadeOut(1000);
+        sm2 = 0;
+    }
+
+
+})

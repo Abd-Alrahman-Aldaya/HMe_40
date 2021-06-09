@@ -83,7 +83,7 @@ namespace HireMe.Pages_Ministry
                         Login_Email.Text = "";
                         Login_Password.Text = "";
                         Session["id_student"] = data_stu_login_info.Rows[i][0].ToString();
-                        Response.Redirect("~/HireMe/Pages-Graduates/Create-Account-Gradute.aspx");
+                        Response.Redirect("~/HireMe/Pages-Graduates/recive_message.aspx");
                         return;
                     }
                 }

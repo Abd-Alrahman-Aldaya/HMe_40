@@ -38,7 +38,9 @@ namespace HireMe
         protected void Button1_Click(object sender, EventArgs e)
         {
             C_HireMe h = new C_HireMe();
-            h.sort_shahed();
+            var dt= h.sort_shahed();
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
             //DataTable dt_90_shahed = new DataTable();
             //Data_Access ds = new Data_Access();
             //string q_90_shahed = "select * from tb_graduate where graduate_shahid=1 and graduate_avg>=80 order by graduate_avg desc";
@@ -46,7 +48,8 @@ namespace HireMe
             //GridView1.DataSource = dt_90_shahed.Rows[0];
             //GridView1.DataBind();
             //Label1.Text = "fssf";
-            
+
+         
         
             
         }

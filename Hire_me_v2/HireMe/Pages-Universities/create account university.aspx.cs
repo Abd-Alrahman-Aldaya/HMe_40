@@ -14,12 +14,47 @@ namespace HireMe.Pages_Universities
         Data_Access ds;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                lab_error.InnerText = " ";
+            }
         }
         string country;
         protected void sing_in_univarsity(object sender, EventArgs e)
         {
-            ds = new Data_Access();
+            C_HireMe c = new C_HireMe();
+            if (c.check_string(univer_email.Text)==false)
+            {
+                lab_error.InnerText = "input null or contain(-,<,;)";
+                return;
+            }  
+
+             if(c.check_string(univer_name.Text)==false)
+            {
+                lab_error.InnerText = "input null or contain(-,<,;)";
+                return;
+            }
+             if(c.check_string(univer_pass.Text)==false)
+            {
+                lab_error.InnerText = "input null or contain(-,<,;)";
+                return;
+                    }
+             if(c.check_string(univer_phone.Text)==false)
+            {
+                lab_error.InnerText = "input null or contain(-,<,;)";
+                return;
+             }
+             if(c.check_string(univer_conf_pass.Text)==false)
+            {
+                lab_error.InnerText = "input null or contain(-,<,;)";
+             return;
+             }
+
+
+
+
+           ds = new Data_Access();
+            country = DropDown_country.SelectedValue;
             string univer_name1 = univer_name.Text;
             string q_insert_info = "insert into tb_university (university_name,university_email,university_password,university_country) values('"+univer_name1+"','"+univer_email.Text+"','"+univer_pass.Text+"','"+country+"')";
             ds.open_connection();
@@ -37,6 +72,9 @@ namespace HireMe.Pages_Universities
             univer_pass.Text = null;
             univer_conf_pass.Text = null;
             univer_phone.Text = null;
+            lab_error.InnerText = null;
+
+            
         }
 
         protected void DropDown_country_SelectedIndexChanged(object sender, EventArgs e)

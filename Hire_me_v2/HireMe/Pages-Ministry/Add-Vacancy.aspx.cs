@@ -20,6 +20,7 @@ namespace HireMe.Pages_Ministry
             name_specialization_new.DataTextField = "university_name";
             name_specialization_new.DataValueField = "university_name";
             name_specialization_new.DataBind();
+                lab_error.Text = " ";
             }
         }
         //-----------------------------------SideBar-------------------------------------//
@@ -47,6 +48,35 @@ namespace HireMe.Pages_Ministry
         //-----------------------------------ButtonEvent-------------------------------------//
         protected void function_btn_Add_Vacancy(object sender, EventArgs e)
         {
+
+
+            C_HireMe check = new C_HireMe();
+
+            if (check.check_string(name_specialization_new.Text) == false)
+            {
+                lab_error.Text = "input null or contain(-,<,;)";
+                return;
+            }
+
+            if (check.check_string(type_specialization_new.Text) == false)
+            {
+                lab_error.Text = "input null or contain(-,<,;)";
+                return;
+            }
+
+            if (check.check_string(avg_specialization_new.Text) == false)
+            {
+                lab_error.Text = "input null or contain(-,<,;)";
+                return;
+            }
+
+            if (check.check_string(count_specialization_new.Text) == false)
+            {
+                lab_error.Text = "input null or contain(-,<,;)";
+                return;
+            }
+
+
             var avg = avg_specialization_new.Text;
             var count = count_specialization_new.Text;
             var name = name_specialization_new.SelectedValue;
@@ -55,6 +85,8 @@ namespace HireMe.Pages_Ministry
             da.open_connection();
             da.EX_Non_Query_Insert("insert into tb_vacancy(vacancy_count,vacancy_avg,vacancy_name,vacancy_type,id_ministry) values(" + count+","+avg+",'"+name+"','"+type+"',"+id_ministry+")");
             da.open_connection();
+
+            lab_error.Text = " ";
         }
 
         protected void name_specialization_new_SelectedIndexChanged(object sender, EventArgs e)

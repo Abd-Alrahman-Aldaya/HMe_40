@@ -33,6 +33,12 @@ namespace Hire_me_v2.HireMe.Pages_Universities
 
         protected void btn_send_message(object sender, EventArgs e)
         {
+            C_HireMe check = new C_HireMe();
+            if(check.check_string(txt_message.Text) == false)
+            {
+                lab_error.Text = "input null or contain(-,<,;)";
+                return;
+            }
             da = new Data_Access();
               int? id_university = Convert.ToInt32(Session["id_university"]);
            // int? id_university = 1;

@@ -16,8 +16,8 @@ namespace Hire_me_v2.HireMe.Pages_Graduates
         {
 
             //  ds.SelectData("select id_graduate from tb_graduate where graduate_check=3");
-            // id_graduate = Convert.ToInt32(Session["id_student"]);
-            id_graduate = 4;
+             id_graduate = Convert.ToInt32(Session["id_student"]);
+           // id_graduate = 4;
 
             var dt_message = ds.SelectData("select * from tb_message where id_graduate=" + id_graduate + " and message_read=0;");
             string a = dt_message.Rows[0][3].ToString();

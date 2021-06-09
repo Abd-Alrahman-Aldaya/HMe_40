@@ -18,21 +18,16 @@ namespace HireMe.Pages_Universities
 
        protected void Button1_Click(object sender, EventArgs e)
        {
-            Data_Access ds = new Data_Access();
-            string q_ministry = "select * from tb_ministry";
-            string q_university = "select * from tb_university";
-            string q_admin = "select * from tb_admin";
-            DataTable dt_m = new DataTable();
-            DataTable dt_u = new DataTable();
-            DataTable dt_a = new DataTable();
-            dt_m = ds.SelectData(q_ministry);
-            dt_u=ds.SelectData(q_university);
-            dt_a = ds.SelectData(q_admin);
-            if (ListBox1.SelectedItem.Value == "ministry")
-            {
-                GridView1.DataSource = dt_m;
-                GridView1.DataBind();
-            }
+            //Data_Access ds = new Data_Access();
+            //string q_ministry = "select * from tb_ministry";
+            //string q_university = "select * from tb_university";
+            //string q_admin = "select * from tb_admin";
+            //DataTable dt_m = new DataTable();
+            //DataTable dt_u = new DataTable();
+            //DataTable dt_a = new DataTable();
+            //dt_m = ds.SelectData(q_ministry);
+            //dt_u=ds.SelectData(q_university);
+            //dt_a = ds.SelectData(q_admin);
         }
 
         protected void admin_Click(object sender, EventArgs e)
@@ -79,5 +74,7 @@ namespace HireMe.Pages_Universities
         {
             Response.Redirect("edite university.aspx");
         }
+
+       
     }
 }

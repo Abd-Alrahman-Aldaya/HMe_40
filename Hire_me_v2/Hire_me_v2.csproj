@@ -119,7 +119,6 @@
     <Content Include="HireMe\Pages-Ministry\Update-Vacancy.aspx" />
     <Content Include="HireMe\Pages-Universities\check_gradute.aspx" />
     <Content Include="HireMe\Pages-Universities\create account university.aspx" />
-    <Content Include="HireMe\Pages-Universities\information input.aspx" />
     <Content Include="HireMe\Pages-Universities\send message.aspx" />
     <Content Include="HireMe\tarek\css\animationn.css" />
     <Content Include="HireMe\tarek\css\bootstrap.min.css" />
@@ -266,13 +265,6 @@
     </Compile>
     <Compile Include="HireMe\Pages-Universities\create account university.aspx.designer.cs">
       <DependentUpon>create account university.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="HireMe\Pages-Universities\information input.aspx.cs">
-      <DependentUpon>information input.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="HireMe\Pages-Universities\information input.aspx.designer.cs">
-      <DependentUpon>information input.aspx</DependentUpon>
     </Compile>
     <Compile Include="HireMe\Pages-Universities\send message.aspx.cs">
       <DependentUpon>send message.aspx</DependentUpon>

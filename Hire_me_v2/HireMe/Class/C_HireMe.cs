@@ -22,7 +22,7 @@ namespace HireMe.Class
         public DataTable check_vacancy(int avg ,string prof)
         {
           //  string q = "select ministry_name+ vacancy_type ministry_name, vacancy_type from tb_ministry,tb_vacancy where tb_vacancy.id_ministry=tb_ministry.id_ministry and tb_vacancy.vacancy_avg>='" + avg+"'and tb_vacancy.vacancy_name='"+prof+"';";
-            string q = "select ministry_name+' | '+ vacancy_type z,id_vacancy, ministry_name, vacancy_type from tb_ministry,tb_vacancy where tb_vacancy.id_ministry=tb_ministry.id_ministry and tb_vacancy.vacancy_avg>='" + avg+"'and tb_vacancy.vacancy_name='"+prof+"';";
+            string q = "select ministry_name+' | '+ vacancy_type z,id_vacancy, ministry_name, vacancy_type from tb_ministry,tb_vacancy where tb_vacancy.id_ministry=tb_ministry.id_ministry and tb_vacancy.vacancy_avg<='" + avg+"'and tb_vacancy.vacancy_name='"+prof+"';";
             Data_Access ds = new Data_Access();
             DataTable dt = ds.SelectData(q);
             return dt ;
@@ -106,7 +106,8 @@ namespace HireMe.Class
             }
         }
 
-        public void sort_shahed()
+        DataTable dt_all_grad;
+        public DataTable sort_shahed()
         {
             Data_Access ds = new Data_Access();
             DataTable dt_90_shahed = new DataTable();
@@ -149,15 +150,35 @@ namespace HireMe.Class
             dt_50_shahed = ds.SelectData(q_50_shahed);
             //----------------------------------------
             ds.open_connection();
-            string q_delete_grad = "delete from tb_graduate";
-            ds.EX_Non_Query(q_delete_grad);
-            string insert_90_shahed;
+            dt_all_grad = new DataTable();
+            dt_all_grad = ds.SelectData("select * from tb_graduate");
+            
+            // string q_delete_grad = "delete from tb_graduate";
+            //ds.EX_Non_Query(q_delete_grad);
+            // string insert_90_shahed;
+            int y = 0;
             for (int i = 0; i < dt_90_shahed.Rows.Count; i++)
             {
-                 insert_90_shahed = "insert into tb_graduate (graduate_id_number,graduate_first_name,graduate_last_name,graduate_father_name,graduate_mother_name,graduate_date,graduate_avg,graduate_profession,graduate_resident_country,graduate_shahid,graduate_email,graduate_password,graduate_check) " +
-                        "values('" + dt_90_shahed.Rows[i][1] + "','" + dt_90_shahed.Rows[i][2] + "','" + dt_90_shahed.Rows[i][3] + "','" + dt_90_shahed.Rows[i][4] + "','" + dt_90_shahed.Rows[i][5] + "','" + dt_90_shahed.Rows[i][6] + "','" + dt_90_shahed.Rows[i][7] + "','" + dt_90_shahed.Rows[i][8] + "','" + dt_90_shahed.Rows[i][9] + "','" + dt_90_shahed.Rows[i][10] + "','" + dt_90_shahed.Rows[i][11] + "','" + dt_90_shahed.Rows[i][12] + "','" + dt_90_shahed.Rows[i][13] + "')";
-                ds.EX_Non_Query_Insert(insert_90_shahed);
+
+                // dt_all_grad.NewRow();
+                dt_all_grad.Rows[y][0] = dt_90_shahed.Rows[i][0];
+                y++;
+                //   insert_90_shahed = "insert into tb_graduate (graduate_id_number,graduate_first_name,graduate_last_name,graduate_father_name,graduate_mother_name,graduate_date,graduate_avg,graduate_profession,graduate_resident_country,graduate_shahid,graduate_email,graduate_password,graduate_check) " +
+                //        "values('" + dt_90_shahed.Rows[i][1] + "','" + dt_90_shahed.Rows[i][2] + "','" + dt_90_shahed.Rows[i][3] + "','" + dt_90_shahed.Rows[i][4] + "','" + dt_90_shahed.Rows[i][5] + "','" + dt_90_shahed.Rows[i][6] + "','" + dt_90_shahed.Rows[i][7] + "','" + dt_90_shahed.Rows[i][8] + "','" + dt_90_shahed.Rows[i][9] + "','" + dt_90_shahed.Rows[i][10] + "','" + dt_90_shahed.Rows[i][11] + "','" + dt_90_shahed.Rows[i][12] + "','" + dt_90_shahed.Rows[i][13] + "')";
+                //ds.EX_Non_Query_Insert(insert_90_shahed);
+
             }
+          //  dt_all_grad.Rows.Add(dt_90_shahed.Rows[1]);
+            for (int i = 0; i < 1; i++)
+            {
+
+              
+                //y++;
+                //   insert_90_shahed = "insert into tb_graduate (graduate_id_number,graduate_first_name,graduate_last_name,graduate_father_name,graduate_mother_name,graduate_date,graduate_avg,graduate_profession,graduate_resident_country,graduate_shahid,graduate_email,graduate_password,graduate_check) " +
+                //        "values('" + dt_90_shahed.Rows[i][1] + "','" + dt_90_shahed.Rows[i][2] + "','" + dt_90_shahed.Rows[i][3] + "','" + dt_90_shahed.Rows[i][4] + "','" + dt_90_shahed.Rows[i][5] + "','" + dt_90_shahed.Rows[i][6] + "','" + dt_90_shahed.Rows[i][7] + "','" + dt_90_shahed.Rows[i][8] + "','" + dt_90_shahed.Rows[i][9] + "','" + dt_90_shahed.Rows[i][10] + "','" + dt_90_shahed.Rows[i][11] + "','" + dt_90_shahed.Rows[i][12] + "','" + dt_90_shahed.Rows[i][13] + "')";
+                //ds.EX_Non_Query_Insert(insert_90_shahed);
+            }
+            return dt_all_grad;
             //---------------------------
             string insert_90_normal;
             for (int i = 0; i < dt_90_normal.Rows.Count; i++)
@@ -248,13 +269,13 @@ namespace HireMe.Class
             return new string(chr);
         }
 
-
+        
         public void SORT()
         {
             Data_Access ds = new Data_Access();
-            string q_get_id_grad = "select * from tb_graduate";
-            DataTable dt_all_grad = new DataTable();
-            dt_all_grad = ds.SelectData(q_get_id_grad);
+           // string q_get_id_grad = "select * from tb_graduate";
+           // DataTable dt_all_grad = new DataTable();
+          //  dt_all_grad = ds.SelectData(q_get_id_grad);
             int id_grad;
             string q_id_vacancy;
             DataTable dt_vacancy = new DataTable();
@@ -262,6 +283,9 @@ namespace HireMe.Class
             string q_count_vac;
             DataTable dt_count_vac = new DataTable();
             int count_vac;
+            int? count_vac_check = 0;
+            string q_count_vac_check;
+
             for (int i = 0; i < dt_all_grad.Rows.Count; i++)
             {
                 for (int j = 1; i < 6; i++)
@@ -274,17 +298,56 @@ namespace HireMe.Class
                     q_count_vac = "select vacancy_count from tb_vacancy where id_ministry='" + (int)dt_vacancy.Rows[0][0] + "' and vacancy_name='" + prof_grad + "'";
                     dt_count_vac = ds.SelectData(q_count_vac);
                     count_vac = (int)dt_count_vac.Rows[0][0];
-                    if (count_vac > 0)  
+                    q_count_vac_check = "select vacancy_check_count from tb_vacancy where id_vacancy='" + dt_vacancy.Rows[0][0] + "'";
+                    var check_count = ds.SelectData(q_count_vac_check);
+                    count_vac_check = Convert.ToInt32(check_count);
+                    if (count_vac_check == null)
+                    {
+                        ds.open_connection();
+                        ds.EX_Non_Query_Insert("insert into tb_vacancy (vacancy_check_count) values('" + count_vac_check + "')");
+                    }
+
+                    if (count_vac - count_vac_check > 0)
                     {
                         ds.open_connection();
                         ds.EX_Non_Query_Insert("insert into tb_result (id_ministry,id_graduate) values('" + dt_vacancy.Rows[0][0] + "','" + id_grad + "')");
+                        count_vac_check += 1;
+                        ds.EX_Non_Query("update tb_vacancy set vacancy_check_count='" + count_vac_check + "' where id_vacancy='" + dt_vacancy.Rows[0][0] + "' ");
                         ds.close_connection();
                         break;
                     }
                 }
+
             }
         }
+            public bool check_string(string Text)
+        {
+            if (string.IsNullOrEmpty(Text))
+            {
+                return false;
+            }
+            if (Text.Contains('<') || Text.Contains('-') || Text.Contains(';')) 
+            {
+                return false;
+            }
+            
+            return true;
+        }
 
+        public bool check_Email(string Text,string quary_email)
+        {
 
+            Data_Access das = new Data_Access();
+            var dt_email = das.SelectData(quary_email);
+            for (int i = 0; i < dt_email.Rows.Count; i++)
+            {
+                if (dt_email.Rows[i][0].ToString() == Text)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        
     }
 }

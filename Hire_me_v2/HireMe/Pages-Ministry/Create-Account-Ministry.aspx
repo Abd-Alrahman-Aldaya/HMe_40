@@ -11,18 +11,6 @@
     <link href="CSS/StyleMob2-M.css" rel="stylesheet" media="screen and (max-width:580px)" />
     <link href="CSS/StyleMob3-M.css" rel="stylesheet" media="screen and (max-width:380px)" />
 
-    <link href="../Css/AhmedBasic%20-%20Copy.css" rel="stylesheet" />
-
-    <link href="../Css/Style-Ahmed.css" rel="stylesheet" />
-    <link href="../Css/StyleMob1.css" rel="stylesheet" media="screen and (max-width:780px)" />
-    <link href="../Css/StyleMob2.css" rel="stylesheet" media="screen and (max-width:580px)" />
-    <link href="../Css/StyleMob3.css" rel="stylesheet" media="screen and (max-width:380px)" />
-
-   <link href="CSS/Style1-Ahmed.css" rel="stylesheet" />
-    <link href="CSS/StyleMob1.css" rel="stylesheet" media="screen and (max-width:780px)" />
-    <link href="CSS/StyleMob2.css" rel="stylesheet" media="screen and (max-width:580px)" />
-    <link href="CSS/StyleMob3.css" rel="stylesheet" media="screen and (max-width:380px)" />
-
     <title>Create-Account-Ministry</title>
 
 &nbsp;<meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /></head><body class="body"><form id="form_Create_Account" runat="server">
@@ -48,14 +36,16 @@
                             <h1 class="title-post">خاص بالوزارات</h1>
                         </header>
 
-                        <h3 class="title-login"><i class="fa fa-chevron-left icon"></i>  إنشاء حساب </h3>
+                        <h3 class="title-login"><i class="fa fa-chevron-left icon"></i>  إنشاء حساب 
+                            <asp:Label ID="lab_error" runat="server" Font-Size="25px" ForeColor="Red" Text="*"></asp:Label>
+                        </h3>
 
                         <section class="post-document">
 
                             <div class="post-login">
                                 <span class="icon"><i class="fas fa-user"></i></span>
                                 <span class="title-input">الأسم الوزارة</span>
-                                <asp:TextBox ID="name_ministry_new" CssClass="input" AutoCompleteType="Disabled" MaxLength="15" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="name_ministry_new" CssClass="input" AutoCompleteType="Disabled" MaxLength="30" runat="server"></asp:TextBox>
                                 <%--<input type="text" class="input" id="name-ministry" placeholder="Name" autocomplete="off" maxlength="15">--%>
                                 <span class="span-bottom"></span>
                             </div>
@@ -101,7 +91,7 @@
                             </div>
 
                             <div class="btn">
-                                <button runat="server"  class="button" id="btn_create_new" onserverclick="function_btn_Create_Account_new" title="Creare_Account_new" ><i class="fas fa-sign-in-alt icon-btn"></i> تأكيد </button>
+                                <button runat="server"  class="button" id="btn_create_new" onserverclick="function_btn_Create_Account_new" title="Creare_Account_new" ><i class="fas fa-sign-in-alt icon-btn"></i> تأكيد</button>
                                 <br/>
                                 <br/>
                             </div>
