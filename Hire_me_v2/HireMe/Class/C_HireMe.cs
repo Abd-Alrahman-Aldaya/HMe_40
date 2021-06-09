@@ -159,25 +159,24 @@ namespace HireMe.Class
             int y = 0;
             for (int i = 0; i < dt_90_shahed.Rows.Count; i++)
             {
-
-                // dt_all_grad.NewRow();
-                dt_all_grad.Rows[y][0] = dt_90_shahed.Rows[i][0];
+                for (int j = 0; j < 14; j++)
+                {
+                    dt_all_grad.Rows[y][j] = dt_90_shahed.Rows[i][j];
+                }
+                
                 y++;
+
+
+               // DataRow dr = dt_90_shahed.Rows[0];
+                //  dt_all_grad.Rows.Add(dr.Table);
+                // dt_all_grad.NewRow();
                 //   insert_90_shahed = "insert into tb_graduate (graduate_id_number,graduate_first_name,graduate_last_name,graduate_father_name,graduate_mother_name,graduate_date,graduate_avg,graduate_profession,graduate_resident_country,graduate_shahid,graduate_email,graduate_password,graduate_check) " +
                 //        "values('" + dt_90_shahed.Rows[i][1] + "','" + dt_90_shahed.Rows[i][2] + "','" + dt_90_shahed.Rows[i][3] + "','" + dt_90_shahed.Rows[i][4] + "','" + dt_90_shahed.Rows[i][5] + "','" + dt_90_shahed.Rows[i][6] + "','" + dt_90_shahed.Rows[i][7] + "','" + dt_90_shahed.Rows[i][8] + "','" + dt_90_shahed.Rows[i][9] + "','" + dt_90_shahed.Rows[i][10] + "','" + dt_90_shahed.Rows[i][11] + "','" + dt_90_shahed.Rows[i][12] + "','" + dt_90_shahed.Rows[i][13] + "')";
                 //ds.EX_Non_Query_Insert(insert_90_shahed);
 
             }
           //  dt_all_grad.Rows.Add(dt_90_shahed.Rows[1]);
-            for (int i = 0; i < 1; i++)
-            {
 
-              
-                //y++;
-                //   insert_90_shahed = "insert into tb_graduate (graduate_id_number,graduate_first_name,graduate_last_name,graduate_father_name,graduate_mother_name,graduate_date,graduate_avg,graduate_profession,graduate_resident_country,graduate_shahid,graduate_email,graduate_password,graduate_check) " +
-                //        "values('" + dt_90_shahed.Rows[i][1] + "','" + dt_90_shahed.Rows[i][2] + "','" + dt_90_shahed.Rows[i][3] + "','" + dt_90_shahed.Rows[i][4] + "','" + dt_90_shahed.Rows[i][5] + "','" + dt_90_shahed.Rows[i][6] + "','" + dt_90_shahed.Rows[i][7] + "','" + dt_90_shahed.Rows[i][8] + "','" + dt_90_shahed.Rows[i][9] + "','" + dt_90_shahed.Rows[i][10] + "','" + dt_90_shahed.Rows[i][11] + "','" + dt_90_shahed.Rows[i][12] + "','" + dt_90_shahed.Rows[i][13] + "')";
-                //ds.EX_Non_Query_Insert(insert_90_shahed);
-            }
             return dt_all_grad;
             //---------------------------
             string insert_90_normal;
