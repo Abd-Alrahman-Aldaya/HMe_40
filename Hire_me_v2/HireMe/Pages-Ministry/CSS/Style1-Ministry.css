@@ -97,10 +97,18 @@ a {
     font-size: 20px;
 }
 
-.info-name{
-    width:30%;
-    font-size:20px;
-    float:right;
+.post-document ul li {
+    list-style: none;
+}
+
+.post-document ul li a {
+    color: #2d2e2e;
+}
+
+.info-name {
+    width: 30%;
+    font-size: 20px;
+    float: right;
 }
 
 .info-grad {
@@ -130,6 +138,11 @@ a {
     font-size: 30px;
     text-align: right;
     margin: 60px 100px 40px 0;
+}
+
+.links {
+    margin:0;
+    padding:10% 0 10% 0;
 }
 
 .title-btnCreate {

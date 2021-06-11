@@ -28,8 +28,8 @@
             <header class="mainHeader" dir="rtl">
                 <img src="../image/casing.jpg" width="900"/>
                 <nav><ul>
-                    <li><a href="#"> <i class="fa fa-home"></i> الصفحة الرئيسية </a></li>
-                    <li><a href="#"> <i class="fas fa-list-alt"></i> قائمة </a></li>
+                    <li><a href="../Home.aspx"><i class="fas fa-home"></i> الصفحة الرئيسية </a></li>
+                    <li><a href="#"> <i class="fas fa-list-alt"></i>  قائمة  </a></li>
                     <li><a href="#"> <i class="fa fa-question-circle"></i> حول </a></li>
                     <li><a href="#"><i class="fas fa-phone"></i> اتصل بنا </a></li>  
                 </ul></nav>
@@ -43,7 +43,7 @@
                        <h1 class="title-post">تسجيل الدخول </h1>
                    </header> 
             
-                   <h3 class="title-login"><i class="fa fa-chevron-left icon" ></i></h3>  
+                   <h3 class="title-login"><i class="fa fa-chevron-left icon" ></i>ادخل البريد الكتروني وكلمة المرور خاص بك.</h3>  
                     
                     <section class="post-document">
 
@@ -95,7 +95,7 @@
                         <h2 class="title-side">تسجيل الدخول</h2>
                         <p class="post-side">
                             -  إذا كان لديك حساب
-                            الوزارتك الحالية يمكن تسجيل
+                            خاص بك يمكن تسجيل
                             أو إدخال الأسم المستخدم
                             أو البريد الالكتروني وكلمة المرور.
                         </p>
