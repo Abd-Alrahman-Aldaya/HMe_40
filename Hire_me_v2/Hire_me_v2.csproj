@@ -85,6 +85,7 @@
     <Content Include="HireMe\Font\fontawesome-webfont.svg" />
     <Content Include="HireMe\Font\glyphicons-halflings-regular.svg" />
     <Content Include="HireMe\Font\index.html" />
+    <Content Include="HireMe\Home.aspx" />
     <Content Include="HireMe\image\blue1.jpg" />
     <Content Include="HireMe\image\casing.jpg" />
     <Content Include="HireMe\image\logo-hire-me.png" />
@@ -145,6 +146,13 @@
     </Compile>
     <Compile Include="HireMe\Class\C_HireMe.cs" />
     <Compile Include="HireMe\Class\Data_Access.cs" />
+    <Compile Include="HireMe\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HireMe\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HireMe\Pages-Admin\edite ministry.aspx.cs">
       <DependentUpon>edite ministry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

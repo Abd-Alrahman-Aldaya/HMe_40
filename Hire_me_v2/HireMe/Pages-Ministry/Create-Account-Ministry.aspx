@@ -13,7 +13,13 @@
 
     <title>Create-Account-Ministry</title>
 
-&nbsp;<meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /></head><body class="body"><form id="form_Create_Account" runat="server">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+    <body class="body">
+        <form id="form_Create_Account" runat="server">
         <div>
 
                 <!--HEADER-->
@@ -46,7 +52,6 @@
                                 <span class="icon"><i class="fas fa-user"></i></span>
                                 <span class="title-input">الأسم الوزارة</span>
                                 <asp:TextBox ID="name_ministry_new" CssClass="input" AutoCompleteType="Disabled" MaxLength="30" runat="server"></asp:TextBox>
-                                <%--<input type="text" class="input" id="name-ministry" placeholder="Name" autocomplete="off" maxlength="15">--%>
                                 <span class="span-bottom"></span>
                             </div>
                             <br/>
