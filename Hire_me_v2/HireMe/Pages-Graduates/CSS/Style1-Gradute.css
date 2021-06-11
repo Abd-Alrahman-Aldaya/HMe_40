@@ -148,7 +148,7 @@ a:hover, a:active {
     font-size: 25px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #193783;
-    direction: ltr;
+    direction: rtl;
     border: none;
     background: none;
     border-bottom: 3px solid #2d2e2e;

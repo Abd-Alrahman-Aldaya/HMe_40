@@ -148,23 +148,21 @@ a {
 }
 
 .input {
+    width: 100%;
     padding: 10px 0px;
     font-size: 30px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #193783;
     direction: ltr;
+    border: none;
     background: none;
     border-bottom: 3px solid #2d2e2e;
-    border-left-style: none;
-    border-left-color: inherit;
-    border-left-width: medium;
-    border-right-style: none;
-    border-right-color: inherit;
-    border-right-width: medium;
-    border-top-style: none;
-    border-top-color: inherit;
-    border-top-width: medium;
 }
+
+#name_ministry_new {
+    direction: rtl;
+}
+
 .input-textarea {
     direction: rtl;
     outline: none;

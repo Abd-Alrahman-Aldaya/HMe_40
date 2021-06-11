@@ -25,29 +25,26 @@ namespace HireMe.Pages_Ministry
                 lab_error.Text = "input null or contain(-,<,;)";
                 return;
             }
-            if(check.check_string (email_ministry_new.Text)==false)
-                    {
+            if (check.check_string(email_ministry_new.Text) == false)
+            {
                 lab_error.Text = "input null or contain(-,<,;)";
                 return;
-                    }
-            if(check.check_string ( pass_ministry_new.Text)==false)
-                        {
+            }
+            if (check.check_string(pass_ministry_new.Text) == false)
+            {
                 lab_error.Text = "input null or contain(-,<,;)";
                 return;
-                        }
-            if(check.check_string ( confirm_pass_ministry_new.Text)==false)
-                            {
+            }
+            if (check.check_string(confirm_pass_ministry_new.Text) == false)
+            {
                 lab_error.Text = "input null or contain(-,<,;)";
                 return;
-                            }
-            if(check.check_string ( phone_ministry_new.Text)==false)
-                                {
+            }
+            if (check.check_string(phone_ministry_new.Text) == false)
+            {
                 lab_error.Text = "input null or contain(-,<,;)";
                 return;
-                                }
-            
-
-
+            }
 
             ds = new Data_Access();
             string min_name = name_ministry_new.Text;
@@ -67,7 +64,7 @@ namespace HireMe.Pages_Ministry
             phone_ministry_new.Text = null;
             
             lab_error.Text = " ";
-          //  Response.Redirect("~/HireMe/Pages-Ministry/Add-Vacancy.aspx");
+            Response.Redirect("Sign-in-Ministry.aspx");
 
         }
     }

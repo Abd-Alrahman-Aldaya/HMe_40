@@ -103,7 +103,7 @@
                                </div>
 
                                <div class="post-login">
-                                   <span class="icon"><i class="fas fa-phone"></i></span>
+                                   <span class="icon"><i class="fa fa-bookmark"></i></span>
                                    <span class="title-input">محافظة </span>
                                    <asp:DropDownList ID="DDL_country_gradute" CssClass="drop_level" runat="server">
                                          <asp:ListItem Value="damas">دمشق</asp:ListItem>
@@ -156,8 +156,7 @@
                         <div class="colume2">
                             <div class="post-login">
                                 <span class="icon"><i class="fa fa-bookmark"></i></span>
-                                <span class="title-input">محافظة الجامعة
-                                </span>
+                                <span class="title-input">محافظة الجامعة</span>
                                 <asp:DropDownList ID="university_country" CssClass="drop_level" runat="server" AutoPostBack="True" OnSelectedIndexChanged="university_country_SelectedIndexChanged">
                                           <asp:ListItem Value="damas">دمشق</asp:ListItem>
                                           <asp:ListItem Value="allepo">حلب</asp:ListItem>

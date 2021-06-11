@@ -51,11 +51,11 @@ namespace HireMe.Pages_Graduates
             
             int id_g = Convert.ToInt32( Session["id_grad"]);
             das = new Data_Access();
-            string q=" ";
+            string q = " ";
             for (int i = 0; i < desires_selected.Items.Count; i++)
             {
                 int x = i + 1;
-                q = "insert into tb_desire values ("+id_g+"," + desires_selected.Items[i].Value + "," + x + ")";
+                q = "insert into tb_desire values (" + id_g + "," + desires_selected.Items[i].Value + "," + x + ")";
                     
                 das.open_connection();
                 das.EX_Non_Query(q);
