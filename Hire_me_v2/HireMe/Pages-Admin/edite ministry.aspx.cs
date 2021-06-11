@@ -23,11 +23,22 @@ namespace HireMe.Pages_ministry
                 DropDown_ministry.DataValueField = "ministry_name";
                 DropDown_ministry.DataTextField = "ministry_name";
                 DropDown_ministry.DataBind();
+                lab_error.Text = " ";
             }
         }
 
         protected void btn_update_Click(object sender, EventArgs e)
         {
+
+            C_HireMe check = new C_HireMe();
+            if (check.check_string(new_name_ministrty.Text)==false)
+            {
+
+                lab_error.Text = "input null or contain(-,<,;)";
+                return;
+
+            }
+
 
             ds = new Data_Access();
             ds.open_connection();

@@ -25,6 +25,7 @@ namespace HireMe.Pages_Ministry
                 name_condition.DataTextField = "emp_condition_name";
                 name_condition.DataValueField = "emp_condition_name";
                 name_condition.DataBind();
+                lab_error.Text = " ";
             }
 
         }
@@ -55,6 +56,16 @@ namespace HireMe.Pages_Ministry
         protected void function_btn_Save_Condition(object sender, EventArgs e)
         {
 
+            C_HireMe check = new C_HireMe();
+            if (check.check_string(name_condition_new_add.Text) == false)
+            {
+
+                lab_error.Text = "input null or contain (-,<,;)";
+                return;
+            }
+           
+
+
             das = new Data_Access();
             das.open_connection();
             var EdNum = das.EX_Non_Query("update tb_emp_condition set emp_condition_name ='" + name_condition_new_add.Text + "' ,emp_condition_type='" + type_condition_up.SelectedValue + "' where emp_condition_name= '"+ name_condition.SelectedValue + "'  ");
@@ -70,6 +81,11 @@ namespace HireMe.Pages_Ministry
             //if ()
             das.close_connection();
 
+        }
+
+        protected void Unnamed_ServerClick(object sender, EventArgs e)
+        {
+            Response.Redirect("display_gradute.aspx");
         }
     }
 }

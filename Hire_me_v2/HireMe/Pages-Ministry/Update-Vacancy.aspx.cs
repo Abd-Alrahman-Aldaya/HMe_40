@@ -25,6 +25,7 @@ namespace HireMe.Pages_Ministry
                 name_specialization.DataTextField = "vacancy_name";
                 name_specialization.DataValueField = "vacancy_name";
                 name_specialization.DataBind();
+                lab_error.Text = " ";
             }
         }
 
@@ -54,6 +55,20 @@ namespace HireMe.Pages_Ministry
         protected void function_btn_Save_Vacancy(object sender, EventArgs e)
         {
 
+            C_HireMe check = new C_HireMe();
+
+            if(check.check_string( avg_specialization .Text)==false)
+            {
+                lab_error.Text = "input null or contain(-,<,;)";
+                return;
+            }
+            if (check.check_string(count_specialization.Text)==false)
+            {
+                lab_error.Text = "input null or contain(-,<,;)";
+                return;
+            }
+
+
             das = new Data_Access();
             das.open_connection();
             var EdNum = das.EX_Non_Query("update tb_vacancy set vacancy_name ='" + name_specialization.SelectedValue + "' ,vacancy_count=" + count_specialization.Text + ", vacancy_avg=" + avg_specialization.Text + ",vacancy_type='" + type_specialization.SelectedValue + "',id_ministry = '" + id_session_min + "' where vacancy_name='" + name_specialization.SelectedValue + "'and vacancy_type='" + type_specialization.SelectedValue + "' and id_ministry ='" + id_session_min+"' ");
@@ -69,5 +84,9 @@ namespace HireMe.Pages_Ministry
             das.close_connection();
         }
 
+        protected void Unnamed_ServerClick(object sender, EventArgs e)
+        {
+            Response.Redirect("display_gradute.aspx");
+        }
     }
 }

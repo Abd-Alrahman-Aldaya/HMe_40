@@ -112,6 +112,7 @@
                         <li><a runat="server" onserverclick="function_link_add_condition">إضافة الشرط</a></li>
                         <li><a runat="server" onserverclick="function_link_update_condition">تعديل الشرط</a></li>
                         <li><a runat="server" onserverclick="function_link_view_cond_vac">استعراض الشواغر و الشروط</a></li>
+                            <li><a runat="server" onserverclick="Unnamed_ServerClick">استعراض الخريج</a></li>
                     </ul>
 
                 </aside>

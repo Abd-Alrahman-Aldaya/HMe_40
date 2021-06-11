@@ -49,6 +49,15 @@ namespace HireMe.Pages_Ministry {
         protected global::System.Web.UI.WebControls.DropDownList type_specialization;
         
         /// <summary>
+        /// lab_error control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lab_error;
+        
+        /// <summary>
         /// avg_specialization control.
         /// </summary>
         /// <remarks>

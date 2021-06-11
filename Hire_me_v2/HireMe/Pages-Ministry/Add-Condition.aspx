@@ -49,6 +49,7 @@
                             <asp:DropDownList ID="type_specialization_for_cond" CssClass="drop_type" Width="50%" runat="server" OnSelectedIndexChanged="type_specialization_for_cond_SelectedIndexChanged"></asp:DropDownList>
                         </div>
                         <br />
+                        <asp:Label ID="lab_error" runat="server" Font-Overline="False" Font-Size="20px" ForeColor="Red" Text="*"></asp:Label>
                         <br />
 
                         <div class="post-form">
@@ -98,6 +99,7 @@
                         <li><a runat="server" onserverclick="function_link_add_condition">إضافة الشرط</a></li>
                         <li><a runat="server" onserverclick="function_link_update_condition">تعديل الشرط</a></li>
                         <li><a runat="server" onserverclick="function_link_view_cond_vac">استعراض الشواغر و الشروط</a></li>
+                            <li><a runat="server" onserverclick="Unnamed_ServerClick">استعراض الخريج</a></li>
                     </ul>
 
                 </aside>

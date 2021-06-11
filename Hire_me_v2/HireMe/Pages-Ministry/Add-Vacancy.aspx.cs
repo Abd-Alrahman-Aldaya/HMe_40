@@ -75,7 +75,13 @@ namespace HireMe.Pages_Ministry
                 lab_error.Text = "input null or contain(-,<,;)";
                 return;
             }
+            string q = "select vacancy_name,vacancy_type from tb_vacancy";
+            if (check.double_check(name_specialization_new.SelectedValue, type_specialization_new.SelectedValue, q)==false)
+            {
+                lab_error.Text = "name exisit";
+                return;
 
+            }
 
             var avg = avg_specialization_new.Text;
             var count = count_specialization_new.Text;
@@ -87,11 +93,18 @@ namespace HireMe.Pages_Ministry
             da.open_connection();
 
             lab_error.Text = " ";
+            avg_specialization_new.Text = " ";
+            count_specialization_new.Text = " ";
         }
 
         protected void name_specialization_new_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Unnamed_ServerClick(object sender, EventArgs e)
+        {
+            Response.Redirect("display_gradute.aspx");
         }
     }
 }

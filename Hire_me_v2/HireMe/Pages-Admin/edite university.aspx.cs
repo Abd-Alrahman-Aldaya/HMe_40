@@ -23,11 +23,21 @@ namespace Hire_me_v2.HireMe.Pages_Admin
                 DropDown_university.DataValueField = "university_name";
                 DropDown_university.DataTextField = "university_name";
                 DropDown_university.DataBind();
+                lab_error.Text = " ";
             }
         }
 
         protected void btn_update_Click(object sender, EventArgs e)
         {
+
+            C_HireMe check = new C_HireMe();
+            if (check.check_string(new_name_university.Text)==false)
+            {
+                lab_error.Text = "input null or contain(-,<,;)";
+                return;
+            }
+
+
             ds = new Data_Access();
             ds.open_connection();
             string update = "update tb_university set university_name='" + new_name_university.Text + "' where university_name='" + DropDown_university.SelectedValue + "'";

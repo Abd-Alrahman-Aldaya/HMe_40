@@ -49,6 +49,15 @@ namespace HireMe.Pages_ministry {
         protected global::System.Web.UI.WebControls.TextBox new_name_ministrty;
         
         /// <summary>
+        /// lab_error control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lab_error;
+        
+        /// <summary>
         /// btn_remove control.
         /// </summary>
         /// <remarks>

@@ -49,6 +49,15 @@ namespace Hire_me_v2.HireMe.Pages_Admin {
         protected global::System.Web.UI.WebControls.TextBox new_name_university;
         
         /// <summary>
+        /// lab_error control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lab_error;
+        
+        /// <summary>
         /// btn_remove control.
         /// </summary>
         /// <remarks>

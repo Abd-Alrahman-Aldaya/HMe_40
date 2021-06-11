@@ -42,7 +42,8 @@
 
                          <h3 class="title-login"><i class="fa fa-chevron-left icon" ></i>  رغبات المتاحة </h3>
 
-                         <asp:DropDownList ID="desires_available" CssClass="drop-desire" runat="server"></asp:DropDownList>
+                         <asp:DropDownList ID="desires_available" CssClass="drop-desire" runat="server">
+                         </asp:DropDownList>
 
                          <div class="btn">
                                 <button runat="server" class="button" id="btn_add_desire" onserverclick="function_btn_Add_Desire" style="float:right;margin-right:20%;" ><i class="fas fa-angle-double-down icon-btn"></i> إضافة</button>
@@ -50,7 +51,18 @@
                          </div>
 
                          <br /> 
+                         <br />
+                         <br />
+                         <br />
+                         <br />
                          <br /> 
+                         <asp:Panel ID="Panel1" runat="server" Height="107px"  CssClass="btn">
+                             <br />
+                             <asp:Label ID="Lab_condition" runat="server" Text="Label" ></asp:Label>
+                             <br />
+                             <asp:Button ID="Btn_yes_condition" runat="server" Text="نعم " class="button" OnClick="Btn_yes_condition_Click"/>
+                             <asp:Button ID="Btn_no_condition" runat="server" Text="لاء" class="button" OnClick="Btn_no_condition_Click" />
+                         </asp:Panel>
                          <br /> 
 
                          <h3 class="title-login"><i class="fa fa-chevron-left icon" ></i>رغبات التي تم اختيارها </h3>

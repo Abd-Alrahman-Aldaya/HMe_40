@@ -34,7 +34,9 @@
                   <label class="upminisrty">الوزارة</label><br />
                   <asp:DropDownList ID="DropDown_ministry" runat="server" class="dropministry form-control" DataTextField="ministry_name" DataValueField="ministry_name" AutoPostBack="True"></asp:DropDownList><br />
                   <asp:Label ID="Label1" runat="server" class="upminisrty" Text="الاسم الجديد"></asp:Label><br />
-                  <asp:TextBox ID="new_name_ministrty" runat="server"></asp:TextBox><br />
+                  <asp:TextBox ID="new_name_ministrty" runat="server"></asp:TextBox>&nbsp;
+                  <asp:Label ID="lab_error" runat="server" Font-Size="20px" ForeColor="Red" Text="*"></asp:Label>
+                  <br />
               </div><br /><br /><br /><br /><br /><br />
              
               <div class="col-xs-4">

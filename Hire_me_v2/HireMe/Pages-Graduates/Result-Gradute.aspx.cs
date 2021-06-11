@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HireMe.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,24 @@ namespace Hire_me_v2.HireMe.Pages_Graduates
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            result_gradute.Enabled = false;
+            int id_garad = Convert.ToInt32(Session["id_student"]);
+            Data_Access das = new Data_Access();
+            var dt_id_minis= das.SelectData("select id_ministry from tb_result where id_graduate =" + id_garad + "");
+            if (dt_id_minis.Rows.Count == 0)
+            {
+                return;
+            }
+            int id_minis = Convert.ToInt32(dt_id_minis.Rows[0][0]);
+
+            var dt_resut = das.SelectData("select ministry_name from tb_ministry where id_ministry=" + id_minis + ";");
+            if (dt_resut.Rows.Count == 0)
+            {
+                return;
+            }
+
+            result_gradute.Text = dt_resut.Rows[0][0].ToString();
+
 
         }
     }

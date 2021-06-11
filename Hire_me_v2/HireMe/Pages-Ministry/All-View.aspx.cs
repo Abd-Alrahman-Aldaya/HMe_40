@@ -141,7 +141,12 @@ namespace HireMe.Pages_Ministry
             GridView_All0.DataBind();
         }
 
- 
+        protected void Unnamed_ServerClick(object sender, EventArgs e)
+        {
+            Response.Redirect("display_gradute.aspx");
+        }
+
+
 
         //protected void GridView_All_RowCommand(object sender, GridViewCommandEventArgs e)
         //{

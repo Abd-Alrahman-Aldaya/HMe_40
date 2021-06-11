@@ -23,37 +23,49 @@ namespace HireMe.Pages_Universities
         protected void sing_in_univarsity(object sender, EventArgs e)
         {
             C_HireMe c = new C_HireMe();
-            if (c.check_string(univer_email.Text)==false)
-            {
-                lab_error.InnerText = "input null or contain(-,<,;)";
-                return;
-            }  
-
-             if(c.check_string(univer_name.Text)==false)
+            if (c.check_string(univer_email.Text) == false)
             {
                 lab_error.InnerText = "input null or contain(-,<,;)";
                 return;
             }
-             if(c.check_string(univer_pass.Text)==false)
+
+            if (c.check_string(univer_name.Text) == false)
             {
                 lab_error.InnerText = "input null or contain(-,<,;)";
                 return;
-                    }
-             if(c.check_string(univer_phone.Text)==false)
+            }
+            if (c.check_string(univer_pass.Text) == false)
             {
                 lab_error.InnerText = "input null or contain(-,<,;)";
                 return;
-             }
-             if(c.check_string(univer_conf_pass.Text)==false)
+            }
+            if (c.check_string(univer_phone.Text) == false)
             {
                 lab_error.InnerText = "input null or contain(-,<,;)";
-             return;
-             }
+                return;
+            }
+            if (c.check_string(univer_conf_pass.Text) == false)
+            {
+                lab_error.InnerText = "input null or contain(-,<,;)";
+                return;
+            }
+
+            if (c.check_Email(univer_email.Text, "select university_email from tb_university ") == false)
+            {
+                lab_error.InnerText = "email excist";
+                return;
+
+            }
+            if (univer_pass.Text != univer_conf_pass.Text)
+            {
+                lab_error.InnerText = "no match password";
+                return;
+            }
 
 
 
 
-           ds = new Data_Access();
+            ds = new Data_Access();
             country = DropDown_country.SelectedValue;
             string univer_name1 = univer_name.Text;
             string q_insert_info = "insert into tb_university (university_name,university_email,university_password,university_country) values('"+univer_name1+"','"+univer_email.Text+"','"+univer_pass.Text+"','"+country+"')";

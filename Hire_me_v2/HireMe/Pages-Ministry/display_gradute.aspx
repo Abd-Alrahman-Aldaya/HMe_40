@@ -1,22 +1,27 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Update-Condition.aspx.cs" Inherits="HireMe.Pages_Ministry.Update_Condition" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="display_gradute.aspx.cs" Inherits="Hire_me_v2.HireMe.Pages_Ministry.display_gradute" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-
-    <title>Update-Condition</title>
+    
+    <title>All-View</title>
 
     <link href="CSS/Style2-Ministry.css" rel="stylesheet" />
 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        .grid{
+            margin-left:100px;
+            text-align:right;
+        }
+    </style>
 
 </head>
 <body class="body">
-
-    <form id="form1" runat="server">
+   <form id="form_All_View" runat="server">
         <div>
 
             <!--HEADER-->
@@ -29,13 +34,13 @@
                 </ul></nav>
             </header>
 
-            <!--DOCUMENT-->
+             <!--DOCUMENT-->
             <div class="mainContent">
 
                 <section class="top-Content" >
 
                     <header>
-                        <h1 class="title-post"><i class="fa fa-chevron-left icon" ></i> تعديل الشروط</h1>
+                        <h1 class="title-post"><i class="fa fa-chevron-left icon" ></i> استعراض الخريجين </h1>
                         <img src="../image/logo-hire-me.png" />
                     </header>
                     <br />
@@ -44,53 +49,41 @@
                     <section class="post-document">
 
                         <div class="post-form">
-                            <asp:GridView ID="GridView_Condition" runat="server"></asp:GridView>
-                        </div>
+                            <asp:GridView ID="GridView_All" Width="427px" Height="232px" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" CssClass="grid"  >
+                                <AlternatingRowStyle BackColor="Gainsboro" />
+                                <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                                <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
+                                <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                                <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
+                                <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+                                <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                                <SortedAscendingHeaderStyle BackColor="#0000A9" />
+                                <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                                <SortedDescendingHeaderStyle BackColor="#000065" />
+                            </asp:GridView>
 
-                        <div class="post-form">
-                            <%--<span class="icon"><i class="fas fa-user"></i></span>--%>
-                            <span class="title-input">الأسم الشرط : </span>
-                            <asp:DropDownList ID="name_condition" CssClass="drop_type" runat="server"></asp:DropDownList>
-                        </div>
-                        <asp:Label ID="lab_error" runat="server" Font-Size="25px" ForeColor="Red" Text="*"></asp:Label>
-                        <br />
-                        <br />
+        <%--                          <dl id="dl_vac" runat="server">
+                                    <dt id="dt_vac">
+                                         <ul><li id="li_vac" runat="server"></li></ul>
+                                    </dt>
+                                     <dd id="dd_con" runat="server">
+                                          <ul><li id="li_con" runat="server"></li></ul>
+                                     </dd>
 
-                        <div class="post-form">
-                            <span class="title-input">اسم الشرط الجديد : </span>
-                            <asp:TextBox ID="name_condition_new_add" CssClass="input" AutoCompleteType="Disabled" MaxLength="15" runat="server"></asp:TextBox>                                
-                            <span class="span-bottom"></span>
-                        </div>
-                        <br />
-                        <br />
-
-                        <div class="post-form">
-                            <span class="title-input">النوع الشرط : </span>
-                            <asp:DropDownList ID="type_condition_up" CssClass="drop_type" runat="server">
-                                <asp:ListItem>رقمي</asp:ListItem>
-                                <asp:ListItem>نصي</asp:ListItem>
-                                <asp:ListItem>منطقي</asp:ListItem>
-                            </asp:DropDownList>
+                                  </dl>--%>
+                          
+                            
+                          
                         </div>
                         <br />
-                        <br />                        
-
-                        <div class="btn">
-                                <button runat="server" class="button" id="btn_save_cond" onserverclick="function_btn_Save_Condition" title="Save_Condition" ><i class="fas fa-save icon-btn"></i> حفظ</button>
-                                <br/>
-                                <br/>
-                                <button runat="server" class="button" id="btn_remove_cond" onserverclick="function_btn_Remove_Condition" title="Remove_Condition" ><i class="fa fa-trash icon-btn"></i> إزالة </button>
-                                <br/>
-                                <br/>
-                            </div>
+                        <br />
+                        <br />
 
                     </section>
-
                 </section>
-
             </div>
 
-            <!--SIDE-->
+             <!--SIDE-->
             <div class="mainSide">
 
                 <aside class="sidebar">
@@ -105,7 +98,7 @@
                         <li><a runat="server" onserverclick="function_link_add_condition">إضافة الشرط</a></li>
                         <li><a runat="server" onserverclick="function_link_update_condition">تعديل الشرط</a></li>
                         <li><a runat="server" onserverclick="function_link_view_cond_vac">استعراض الشواغر و الشروط</a></li>
-                            <li><a runat="server" onserverclick="Unnamed_ServerClick">استعراض الخريج</a></li>
+                        <li><a runat="server" onserverclick="Unnamed_ServerClick">استعراض الخريج</a></li>
                     </ul>
 
                 </aside>

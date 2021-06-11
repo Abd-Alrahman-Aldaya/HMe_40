@@ -25,27 +25,39 @@ namespace HireMe.Pages_Ministry
                 lab_error.Text = "input null or contain(-,<,;)";
                 return;
             }
-            if(check.check_string (email_ministry_new.Text)==false)
-                    {
+            if (check.check_string(email_ministry_new.Text) == false)
+            {
                 lab_error.Text = "input null or contain(-,<,;)";
                 return;
-                    }
-            if(check.check_string ( pass_ministry_new.Text)==false)
-                        {
+            }
+            if (check.check_string(pass_ministry_new.Text) == false)
+            {
                 lab_error.Text = "input null or contain(-,<,;)";
                 return;
-                        }
-            if(check.check_string ( confirm_pass_ministry_new.Text)==false)
-                            {
+            }
+            if (check.check_string(confirm_pass_ministry_new.Text) == false)
+            {
                 lab_error.Text = "input null or contain(-,<,;)";
                 return;
-                            }
-            if(check.check_string ( phone_ministry_new.Text)==false)
-                                {
+            }
+            if (check.check_string(phone_ministry_new.Text) == false)
+            {
                 lab_error.Text = "input null or contain(-,<,;)";
                 return;
-                                }
-            
+            }
+
+            if (check.check_Email(email_ministry_new.Text, "select ministry_email from tb_ministry ") == false)
+            {
+                lab_error.Text = "email excist";
+                return;
+
+            }
+            if (pass_ministry_new.Text != confirm_pass_ministry_new.Text)
+            {
+                lab_error.Text = "no match password";
+                return;
+            }
+
 
 
 

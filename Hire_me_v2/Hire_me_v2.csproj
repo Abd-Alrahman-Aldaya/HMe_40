@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Global.asax" />
     <Content Include="HireMe\bootstrap_ js\bootstrap.bundle.js" />
     <Content Include="HireMe\bootstrap_ js\bootstrap.bundle.min.js" />
     <Content Include="HireMe\bootstrap_ js\bootstrap.js" />
@@ -113,6 +114,7 @@
     <Content Include="HireMe\Pages-Ministry\CSS\StyleMob1-M.css" />
     <Content Include="HireMe\Pages-Ministry\CSS\StyleMob2-M.css" />
     <Content Include="HireMe\Pages-Ministry\CSS\StyleMob3-M.css" />
+    <Content Include="HireMe\Pages-Ministry\display_gradute.aspx" />
     <Content Include="HireMe\Pages-Ministry\Name_ID.txt" />
     <Content Include="HireMe\Pages-Ministry\Sign-in-Ministry.aspx" />
     <Content Include="HireMe\Pages-Ministry\Update-Condition.aspx" />
@@ -138,6 +140,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="HireMe\Class\C_HireMe.cs" />
     <Compile Include="HireMe\Class\Data_Access.cs" />
     <Compile Include="HireMe\Pages-Admin\edite ministry.aspx.cs">
@@ -230,6 +235,13 @@
     </Compile>
     <Compile Include="HireMe\Pages-Ministry\Create-Account-Ministry.aspx.designer.cs">
       <DependentUpon>Create-Account-Ministry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HireMe\Pages-Ministry\display_gradute.aspx.cs">
+      <DependentUpon>display_gradute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HireMe\Pages-Ministry\display_gradute.aspx.designer.cs">
+      <DependentUpon>display_gradute.aspx</DependentUpon>
     </Compile>
     <Compile Include="HireMe\Pages-Ministry\Sign-in-Ministry.aspx.cs">
       <DependentUpon>Sign-in-Ministry.aspx</DependentUpon>

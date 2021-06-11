@@ -17,6 +17,7 @@ namespace HireMe.Pages_Ministry
                 type_specialization_for_cond.DataTextField = "vacancy_name";
                 type_specialization_for_cond.DataValueField = "id_vacancy";
                 type_specialization_for_cond.DataBind();
+                lab_error.Text = " ";
             }
         }
 
@@ -46,20 +47,31 @@ namespace HireMe.Pages_Ministry
         protected void function_btn_Add_Condition(object sender, EventArgs e)
         {
 
+            C_HireMe check = new C_HireMe();
+            if (check.check_string(name_condition_new.Text) == false)
+            {
 
-
-
+                lab_error.Text = "input null or contain(-,<,;)";
+                return;
+            }
+            //string q_vac_con =""
+           // if (check.double_check();
             var condation_name = name_condition_new.Text;
             var condition_type = type_condition_new.SelectedValue;
             var vacncy_id = type_specialization_for_cond.SelectedValue;
             da.open_connection();
-            da.EX_Non_Query_Insert("insert into tb_emp_condition (emp_condition_name,emp_condition_type,id_vacancy) values('" + condation_name + "','"+condition_type+"',"+ vacncy_id + ")");
+            da.EX_Non_Query_Insert("insert into tb_emp_condition (emp_condition_name,emp_condition_type,id_vacancy,vacancy_check_count) values('" + condation_name + "','"+condition_type+"',"+ vacncy_id + ",0)");
             da.close_connection();
         }
 
         protected void type_specialization_for_cond_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Unnamed_ServerClick(object sender, EventArgs e)
+        {
+            Response.Redirect("display_gradute.aspx");
         }
     }
 }

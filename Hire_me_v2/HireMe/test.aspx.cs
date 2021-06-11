@@ -41,6 +41,7 @@ namespace HireMe
             var dt= h.sort_shahed();
             GridView1.DataSource = dt;
             GridView1.DataBind();
+            h.SORT();
             //DataTable dt_90_shahed = new DataTable();
             //Data_Access ds = new Data_Access();
             //string q_90_shahed = "select * from tb_graduate where graduate_shahid=1 and graduate_avg>=80 order by graduate_avg desc";
