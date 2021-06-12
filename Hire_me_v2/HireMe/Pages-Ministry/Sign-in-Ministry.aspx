@@ -43,7 +43,7 @@
                        <h1 class="title-post">تسجيل الدخول </h1>
                    </header> 
             
-                   <h3 class="title-login"><i class="fa fa-chevron-left icon" ></i>ادخل البريد الكتروني وكلمة المرور خاص بك.</h3>  
+                   <h3 class="title-login" style="font-size:25px;"><i class="fa fa-chevron-left icon" ></i>ادخل البريد الكتروني وكلمة المرور خاص بك.</h3>  
                     
                     <section class="post-document">
 

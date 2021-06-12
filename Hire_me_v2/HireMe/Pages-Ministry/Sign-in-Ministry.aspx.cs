@@ -91,11 +91,6 @@ namespace HireMe.Pages_Ministry
             Login_Email.Text = "";
             Login_Password.Text = "";
             Response.Write("<script>alert('Wrong info entred')</script>");
-        }
-
-        protected void function_Create_Account(object sender, EventArgs e)
-        {
-          //  Response.Redirect("Create-Account-Ministry.aspx");            
-        }
+        }     
     }
 }

@@ -16,10 +16,10 @@ namespace HireMe.Pages_Ministry
             var specialization = da.SelectData("select university_name from tb_university group by university_name ");
             if (!IsPostBack)
             {
-            name_specialization_new.DataSource = specialization;
-            name_specialization_new.DataTextField = "university_name";
-            name_specialization_new.DataValueField = "university_name";
-            name_specialization_new.DataBind();
+                name_specialization_new.DataSource = specialization;
+                name_specialization_new.DataTextField = "university_name";
+                name_specialization_new.DataValueField = "university_name";
+                name_specialization_new.DataBind();
                 lab_error.Text = " ";
             }
         }
@@ -48,8 +48,6 @@ namespace HireMe.Pages_Ministry
         //-----------------------------------ButtonEvent-------------------------------------//
         protected void function_btn_Add_Vacancy(object sender, EventArgs e)
         {
-
-
             C_HireMe check = new C_HireMe();
 
             if (check.check_string(name_specialization_new.Text) == false)
@@ -83,7 +81,7 @@ namespace HireMe.Pages_Ministry
             var type = type_specialization_new.SelectedValue;
             int id_ministry = Convert.ToInt32(Session["id_ministry"]);
             da.open_connection();
-            da.EX_Non_Query_Insert("insert into tb_vacancy(vacancy_count,vacancy_avg,vacancy_name,vacancy_type,id_ministry) values(" + count+","+avg+",'"+name+"','"+type+"',"+id_ministry+")");
+            da.EX_Non_Query_Insert("insert into tb_vacancy(vacancy_count,vacancy_avg,vacancy_name,vacancy_type,id_ministry) values(" + count + "," + avg + ",'" + name + "','" + type + "'," + id_ministry + ")");
             da.open_connection();
 
             lab_error.Text = " ";
