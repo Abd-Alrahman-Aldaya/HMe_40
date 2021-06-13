@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using HireMe.Class;
 using System.Data;
+using System;
 
 namespace HireMe.Pages_Universities
 {

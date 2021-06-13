@@ -81,7 +81,7 @@
                         <p> هل تريد إنشاء حساب <i class="fa fa-question-circle icon" style=""></i></p>
                         <div class="btn">
                             <%--<asp:Button ID="btn_create" CssClass="button" runat="server" Text=" إنشاء " /><i class="fas fa-plus icon-btn"></i>--%>
-                            <button runat="server" id="btn_to_create" class="button" onserverclick="function_Create_Account" title="Creare_Account" ><i class="fas fa-plus icon-btn"></i> إنشاء </button>
+                            
                         </div>
                     </div>
             -->

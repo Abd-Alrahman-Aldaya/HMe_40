@@ -24,7 +24,7 @@
             <!--HEADER-->
             <header class="mainHeader">
                 <nav><ul>
-                    <li><a href="Sign-in.aspx"> <i class="fa fa-home"></i> الصفحة الرئيسية </a></li>
+                    <li><a href="Sign-in-Ministry.aspx"> <i class="fa fa-home"></i> الصفحة الرئيسية </a></li>
                     <li><a href="#"> <i class="fas fa-list-alt"></i> قائمة </a></li>
                     <li><a href="#"> <i class="fa fa-question-circle"></i> حول </a></li>
                     <li><a href="#"><i class="fas fa-phone"></i> اتصل بنا </a></li>  
@@ -43,10 +43,8 @@
                     <br />
                     <br />
 
-                    <section class="post-document">
-
-                        <div class="post-form">
-                            <asp:GridView ID="GridView_All" Width="427px" Height="232px" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical"  >
+                    <div class="post-document" style="">
+                            <asp:GridView CssClass="gridview" ID="GridView_All" Width="427px" Height="232px" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical"  >
                                 <AlternatingRowStyle BackColor="Gainsboro" />
                                 <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                                 <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
@@ -58,24 +56,18 @@
                                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
                                 <SortedDescendingHeaderStyle BackColor="#000065" />
                             </asp:GridView>
-
-        <%--                          <dl id="dl_vac" runat="server">
-                                    <dt id="dt_vac">
-                                         <ul><li id="li_vac" runat="server"></li></ul>
-                                    </dt>
-                                     <dd id="dd_con" runat="server">
-                                          <ul><li id="li_con" runat="server"></li></ul>
-                                     </dd>
-
-                                  </dl>--%>
-                            &nbsp;&nbsp;
-                            <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
-                            </asp:DropDownList>
-                            &nbsp;&nbsp;
-                            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="اظهار الشروط" />
-                            
                             <br />
-                            <asp:GridView ID="GridView_All0" Width="427px" Height="232px" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical"  >
+                        <div class="post">
+                            <asp:DropDownList ID="DropDownList1" CssClass="drop_type" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>
+                            <br />
+                            <br />
+                            <br />
+                            <asp:Button ID="Button1" CssClass="button" runat="server" OnClick="Button1_Click" Text="اظهار الشروط" />                            
+                        </div>
+                            <br />
+                            <br />
+                            <br />
+                            <asp:GridView CssClass="gridview" ID="GridView_All0" Width="427px" Height="232px" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical"  >
                                 <AlternatingRowStyle BackColor="Gainsboro" />
                                 <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                                 <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
@@ -87,13 +79,10 @@
                                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
                                 <SortedDescendingHeaderStyle BackColor="#000065" />
                             </asp:GridView>
-
-                        </div>
                         <br />
                         <br />
                         <br />
-
-                    </section>
+                    </div>
                 </section>
             </div>
 

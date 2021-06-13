@@ -166,9 +166,14 @@ section > div {
     border-radius:5px;
 }
 
-.gridview{
+.gridview {
     margin:0 auto;
-    font-size:16px;
+    font-size:18px;
+}
+
+.post{
+   width:70%;
+   margin:0 auto;
 }
 
 .icon-btn {

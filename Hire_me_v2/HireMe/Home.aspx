@@ -39,19 +39,19 @@
 
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="#" runat="server" onserverclick="function_link_sign_info">
                                         <h3 class="title-login links"><i class="fa fa-chevron-left icon"></i> تسجيل معلومات  </h3>
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="#">
+                                    <a href="#" runat="server" onserverclick="function_link_check_info">
                                         <h3 class="title-login links"><i class="fa fa-chevron-left icon"></i> تحقق معلومات  </h3>
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="#">
+                                    <a href="#" runat="server" onserverclick="function_link_view_result">
                                         <h3 class="title-login links"><i class="fa fa-chevron-left icon"></i>إظهار النتيجة  </h3>
                                     </a>
                                 </li>

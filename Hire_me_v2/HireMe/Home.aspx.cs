@@ -13,5 +13,17 @@ namespace Hire_me_v2.HireMe
         {
 
         }
+        protected void function_link_sign_info(object sender, EventArgs e)
+        {
+
+        }
+        protected void function_link_check_info(object sender, EventArgs e)
+        {
+
+        }
+        protected void function_link_view_result(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -47,14 +47,5 @@ namespace HireMe.Pages_Ministry {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlButton btn_sign_in;
-        
-        /// <summary>
-        /// btn_to_create control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btn_to_create;
     }
 }

@@ -1,10 +1,10 @@
-﻿using HireMe.Class;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using HireMe.Class;
+using System;
 
 namespace Hire_me_v2.HireMe.Pages_Universities
 {

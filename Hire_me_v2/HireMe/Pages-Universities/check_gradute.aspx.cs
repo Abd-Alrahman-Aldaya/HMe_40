@@ -1,10 +1,10 @@
-﻿using HireMe.Class;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using HireMe.Class;
+using System;
 
 namespace Hire_me_v2.HireMe.Pages_Universities
 {
@@ -20,7 +20,6 @@ namespace Hire_me_v2.HireMe.Pages_Universities
         {
 
              int id_univer = Convert.ToInt32(Session["id_university"]);
-            //int id_univer = 1;
 
             string q = "select * from tb_university where id_university =" + id_univer + "";
             
@@ -28,18 +27,13 @@ namespace Hire_me_v2.HireMe.Pages_Universities
             das = new Data_Access();
             var dt_uni = das.SelectData(q);
 
-            //GridView1.DataSource = dt_uni;
-            //GridView1.DataBind();
 
-             name_uni = dt_uni.Rows[0][2].ToString();
-            //lab_error.Text= dt_uni.Rows[0][2].ToString();
-           // lab_error.Text= dt_uni.Rows[0][5].ToString();
+             name_uni = dt_uni.Rows[0][2].ToString();;
              country_uni = dt_uni.Rows[0][5].ToString();
 
 
            var dt_spec_gra= das.SelectData("select * from tb_graduate where graduate_profession='"+name_uni+ "' and graduate_university_country='"+country_uni+"' and graduate_check=0");
-            //GridView1.DataSource = dt_spec_gra;
-            //GridView1.DataBind();
+
             if (dt_spec_gra.Rows.Count == 0)
             {
                 lab_id_number_grdute.Text = "finish";
