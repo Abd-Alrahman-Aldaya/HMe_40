@@ -13,6 +13,11 @@ namespace HireMe.Pages_Graduates
         Data_Access das;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["brof"] == null)
+            {
+                Response.Redirect("~/HireMe/Home.aspx");
+                return;
+            }
 
             Panel1.Visible = false;
 
@@ -28,6 +33,7 @@ namespace HireMe.Pages_Graduates
                 desires_available.DataTextField = "z";
                 desires_available.DataValueField = "id_vacancy";
                 desires_available.DataBind();
+                lab_error.Text = " ";
             }
 
         }
@@ -38,19 +44,26 @@ namespace HireMe.Pages_Graduates
             // desires_selected.DataTextField = desires_available.DataTextField;
             // desires_selected.DataValueField = desires_available.DataValueField
 
-            das = new Data_Access();
-         
-            var dt_cond = das.SelectData("select emp_condition_name from tb_emp_condition where id_vacancy="+desires_available.SelectedValue+ "and result_condition=0;");
-
-            if (dt_cond.Rows.Count > 0)
+            if (desires_selected.Items.Count < 5)
             {
-                Panel1.Visible = true;
-                Lab_condition.Text = dt_cond.Rows[0][0].ToString();
-                return;
-            }
+                das = new Data_Access();
 
-            ListItem ls = new ListItem(desires_available.SelectedItem.ToString(), desires_available.SelectedValue);
-            desires_selected.Items.Add(ls);
+                var dt_cond = das.SelectData("select emp_condition_name from tb_emp_condition where id_vacancy=" + desires_available.SelectedValue + "and result_condition=0;");
+
+                if (dt_cond.Rows.Count > 0)
+                {
+                    Panel1.Visible = true;
+                    Lab_condition.Text = dt_cond.Rows[0][0].ToString();
+                    return;
+                }
+
+                ListItem ls = new ListItem(desires_available.SelectedItem.ToString(), desires_available.SelectedValue);
+                desires_selected.Items.Add(ls);
+            }
+            else
+            {
+                lab_error.Text = "اختار ست رغبات فقط";
+            }
             //  Label2.Text = desires_available.SelectedValue[0].ToString();
             //  Label1.Text = desires_selected.SelectedValue[0].ToString();
 
@@ -80,8 +93,8 @@ namespace HireMe.Pages_Graduates
 
         protected void function_btn_Remove_Desire(object sender, EventArgs e)
         {
-              desires_selected.Items.Clear();
-          
+
+            desires_selected.Items.Remove(desires_selected.SelectedItem);
         }
 
         protected void function_btn_sign_Desire(object sender, EventArgs e)
@@ -99,6 +112,7 @@ namespace HireMe.Pages_Graduates
                 das.EX_Non_Query(q);
                 das.close_connection();
             }
+            Response.Redirect("~/HireMe/Home.aspx");
         }
     }
 }

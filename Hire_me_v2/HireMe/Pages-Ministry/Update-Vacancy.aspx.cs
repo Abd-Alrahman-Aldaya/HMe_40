@@ -14,6 +14,13 @@ namespace HireMe.Pages_Ministry
         Data_Access das;
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["id_ministry"] == null)
+            {
+                Response.Redirect("~/HireMe/Home.aspx");
+                return;
+            }
+
             das = new Data_Access();
             id_session_min = Convert.ToInt32(Session["id_ministry"]);
 
@@ -55,6 +62,12 @@ namespace HireMe.Pages_Ministry
         protected void function_btn_Save_Vacancy(object sender, EventArgs e)
         {
 
+            if (name_specialization.Items.Count == 0)
+            {
+                Response.Write("<script>alert('الإختيار فارغ ')</script>");
+                return;
+            }
+
             C_HireMe check = new C_HireMe();
 
             if(check.check_string( avg_specialization .Text)==false)
@@ -77,6 +90,12 @@ namespace HireMe.Pages_Ministry
         }
         protected void function_btn_Remove_Vacancy(object sender, EventArgs e)
         {
+            if (name_specialization.Items.Count == 0)
+            {
+                Response.Write("<script>alert('الإختيار فارغ ')</script>");
+                return;
+            }
+
             das = new Data_Access();
             das.open_connection();
             var EdNum = das.EX_Non_Query("delete from tb_vacancy where vacancy_name='" + name_specialization.SelectedValue + "'and vacancy_type='" + type_specialization.SelectedValue + "' and id_ministry ='" + id_session_min + "' ");

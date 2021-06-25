@@ -45,7 +45,6 @@ namespace HireMe.Pages_Ministry
                 lab_error.Text = "input null or contain(-,<,;)";
                 return;
             }
-<<<<<<< HEAD
 
             if (check.check_Email(email_ministry_new.Text, "select ministry_email from tb_ministry ") == false)
             {
@@ -60,13 +59,10 @@ namespace HireMe.Pages_Ministry
             }
 
 
-
-=======
->>>>>>> e7450c457a38a104192fada94892a90781a21630
-
             ds = new Data_Access();
             string min_name = name_ministry_new.Text;
-            string q_insert_info = "insert into tb_ministry (ministry_name,ministry_email,ministry_password) values('" + min_name+ "','"+ email_ministry_new .Text+ "','"+ pass_ministry_new .Text+ "')";
+            string Encrypted_pass = C_HireMe.Encrypt(pass_ministry_new.Text, 5);
+            string q_insert_info = "insert into tb_ministry (ministry_name,ministry_email,ministry_password) values('" + min_name + "','" + email_ministry_new.Text + "','" + Encrypted_pass + "')";
             ds.open_connection();
             ds.EX_Non_Query_Insert(q_insert_info);
             string q_id_ministry = "select id_ministry from tb_ministry where ministry_name= '"+min_name+"'";

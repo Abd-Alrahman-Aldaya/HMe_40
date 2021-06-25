@@ -94,22 +94,13 @@ namespace HireMe.Pages_Graduates {
         protected global::System.Web.UI.WebControls.DropDownList desires_selected;
         
         /// <summary>
-        /// Label1 control.
+        /// lab_error control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label lab_error;
         
         /// <summary>
         /// btn_sign_desire control.

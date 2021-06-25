@@ -171,6 +171,19 @@ section > div {
     font-size:16px;
 }
 
+.gradvi {
+}
+
+.gradvi th {
+    width: 5px;
+    height: 40px;
+    padding: 5px;
+}
+.gradvi td{
+    height:30px;
+}
+
+
 .icon-btn {
     font-size: 20px;
     margin: 5px;

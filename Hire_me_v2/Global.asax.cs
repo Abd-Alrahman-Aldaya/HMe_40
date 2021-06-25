@@ -18,7 +18,7 @@ namespace Hire_me_v2
             if (Admin.Rows.Count == 0)
             {
                 das.open_connection();
-                das.EX_Non_Query("insert into tb_admin (admin_first_name,admin_last_name,admin_email,admin_password) values ('a','d','admin@admin.com','123')");
+                das.EX_Non_Query("insert into tb_admin (admin_first_name,admin_last_name,admin_email,admin_password) values ('abd','dldaya','admin@admin.com','fgh678')");
                 das.close_connection();
             }
         }
@@ -41,6 +41,11 @@ namespace Hire_me_v2
 
         protected void Application_Error(object sender, EventArgs e)
         {
+            //Session["id_admin"] = null;
+            //Session["id_ministry"] = null;
+            //Session["id_university"] = null;
+            //Session["id_student"] = null;
+            //Response.Redirect("~/HireMe/Home.aspx");
 
         }
 

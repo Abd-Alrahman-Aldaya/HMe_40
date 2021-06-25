@@ -13,6 +13,12 @@ namespace Hire_me_v2.HireMe.Pages_Universities
         Data_Access da;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["id_university"] == null)
+            {
+                Response.Redirect("~/HireMe/Home.aspx");
+                return;
+            }
+
             if (!IsPostBack)
             {
                 string message = Request.QueryString.Get("message").ToString();
@@ -41,7 +47,7 @@ namespace Hire_me_v2.HireMe.Pages_Universities
             }
             da = new Data_Access();
               int? id_university = Convert.ToInt32(Session["id_university"]);
-           // int? id_university = 1;
+
             int? id_gradute = Convert.ToInt32(Request.QueryString.Get("id"));
             DateTime dateTime = DateTime.Now;
 
@@ -50,7 +56,7 @@ namespace Hire_me_v2.HireMe.Pages_Universities
             da.close_connection();
             Response.Redirect("~/HireMe/Pages-Universities/check_gradute.aspx");
         }
-        // string e_name = Request.QueryString.Get("Email");
+
     }
 
 }

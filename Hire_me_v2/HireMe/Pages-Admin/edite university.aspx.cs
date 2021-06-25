@@ -14,6 +14,13 @@ namespace Hire_me_v2.HireMe.Pages_Admin
         Data_Access ds;
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
+            if (Session["id_admin"] == null)
+            {
+                Response.Redirect("~/HireMe/Home.aspx");
+                return;
+            }
             ds = new Data_Access();
             string q = "select university_name from tb_university";
             if (!IsPostBack)
@@ -29,6 +36,13 @@ namespace Hire_me_v2.HireMe.Pages_Admin
 
         protected void btn_update_Click(object sender, EventArgs e)
         {
+
+            if (DropDown_university.Items.Count == 0)
+            {
+                Response.Write("<script>alert('الإختيار فارغ ')</script>");
+                return;
+            }
+
 
             C_HireMe check = new C_HireMe();
             if (check.check_string(new_name_university.Text)==false)
@@ -54,6 +68,13 @@ namespace Hire_me_v2.HireMe.Pages_Admin
 
         protected void btn_remove_Click(object sender, EventArgs e)
         {
+
+            if (DropDown_university.Items.Count == 0)
+            {
+                Response.Write("<script>alert('الإختيار فارغ ')</script>");
+                return;
+            }
+
             ds = new Data_Access();
             ds.open_connection();
             string remove = "delete from tb_university where university_name='" + DropDown_university.SelectedValue + "'";

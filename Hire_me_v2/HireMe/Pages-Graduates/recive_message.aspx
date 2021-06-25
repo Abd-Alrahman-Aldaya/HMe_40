@@ -22,8 +22,8 @@
             <header class="mainHeader" dir="rtl">
                 <img src="../image/casing.jpg" width="900"/>
                 <nav><ul>
-                    <li><a href="#"> <i class="fa fa-home"></i> الصفحة الرئيسية </a></li>
-                    <li><a href="#"> <i class="fas fa-list-alt"></i> قائمة </a></li>
+                    <li><a href="../Home.aspx"> <i class="fa fa-home"></i> الصفحة الرئيسية </a></li>
+                    <li><a href="result display.aspx"> <i class="fas fa-list-alt"></i>  </a></li>
                     <li><a href="#"> <i class="fa fa-question-circle"></i> حول </a></li>
                     <li><a href="#"><i class="fas fa-phone"></i> اتصل بنا </a></li>  
                 </ul></nav>

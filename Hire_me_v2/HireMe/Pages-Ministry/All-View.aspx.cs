@@ -13,6 +13,13 @@ namespace HireMe.Pages_Ministry
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["id_ministry"] == null)
+            {
+                Response.Redirect("~/HireMe/Home.aspx");
+                return;
+            }
+
             if (!IsPostBack)
             {
                 int? id_min = Convert.ToInt32(Session["id_ministry"]);

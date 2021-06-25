@@ -12,9 +12,15 @@ namespace Hire_me_v2.HireMe.Pages_Ministry
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            //if (Session["id_ministry"] == null)
+            //{
+            //    Response.Redirect("~/HireMe/Home.aspx");
+            //    return;
+            //}
+
             Data_Access das = new Data_Access();
-            //   int id_min = Convert.ToInt32(Session["id_ministry"]);
-            int id_min = 3;
+           int id_min = Convert.ToInt32(Session["id_ministry"]);
 
             var dt_result_gra = das.SelectData("select tb_graduate.*,tb_phone.phone from tb_result,tb_graduate,tb_phone where tb_result.id_graduate=tb_graduate.id_graduate and tb_phone.id_graduate=tb_graduate.id_graduate  and tb_result.id_ministry="+id_min+";");
             if (dt_result_gra.Rows.Count == 0)

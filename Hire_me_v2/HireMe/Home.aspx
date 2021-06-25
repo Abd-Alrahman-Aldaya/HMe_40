@@ -40,20 +40,26 @@
                             <ul>
                                 <li>
                                     <a href="#">
-                                        <h3 class="title-login links"><i class="fa fa-chevron-left icon"></i> تسجيل معلومات  </h3>
+                                        <%--<h3 class="title-login links"><i class="fa fa-chevron-left icon"></i> تسجيل معلومات  </h3>--%>
                                     </a>
+                                    <i class="fa fa-chevron-left icon"></i>
+                                    <asp:Button ID="btn_enter" runat="server"  CssClass="title-login button" Text="تسجيل معلومات" OnClick="btn_enter_Click" />
                                 </li>
 
                                 <li>
                                     <a href="#">
-                                        <h3 class="title-login links"><i class="fa fa-chevron-left icon"></i> تحقق معلومات  </h3>
+                                        <%--<h3 class="title-login links"><i class="fa fa-chevron-left icon"></i> تحقق معلومات  </h3>--%>
                                     </a>
+                                    <i class="fa fa-chevron-left icon"></i>
+                                    <asp:Button ID="btn_check" runat="server" CssClass="title-login button" Text="التحقق من وجود خطأ " OnClick="btn_check_Click" />
                                 </li>
 
                                 <li>
-                                    <a href="#">
-                                        <h3 class="title-login links"><i class="fa fa-chevron-left icon"></i>إظهار النتيجة  </h3>
-                                    </a>
+                                   
+                                        <%--<h3 class="title-login links" runat="server" onclick="fun"><i class="fa fa-chevron-left icon" ></i>إظهار النتيجة  </h3>--%>
+                                    <i class="fa fa-chevron-left icon"></i>
+                                    <asp:Button ID="btn_result" runat="server" CssClass="title-login button" Text="إظهار النتيجة " OnClick="btn_result_Click"  />
+                                  
                                 </li>
                             </ul>
 
@@ -61,40 +67,26 @@
 
                     </section>
                 </div>
-
+            
             <!--SIDE-->
                 <div class="mainSide">
                     <aside>
                         <article class="sidebar1" dir="rtl">
-                            <h2 class="title-side">تسجيل الدخول</h2>
+                            <h2 class="title-side">شرح بسيط</h2>
                             <p class="post-side">
-                                -  إذا كان لديك حساب
-                                الوزارتك الحالية يمكن تسجيل
-                                أو إدخال الأسم المستخدم
-                                أو البريد الالكتروني وكلمة المرور.
+                                الرجاء الضغط ع الزر المتاح و استكمال الاجراءات
                             </p>
                         </article>
                     </aside>
                     <aside>
                         <article class="sidebar1" dir="rtl">
-                            <h2 class="title-side">إنشاء حساب</h2>
+                            <h2 class="title-side"> ادخال الرغبات</h2>
                             <p class="post-side">
-                                - إن لم يكن لديك حساب للتسجيل الدخول
-                                يمكن إنشاء حساب جديد خاص بالوزارتك الحالية
-                                و يجب إدخال معلومات المطلوبة والتحقق من البيانات المدخلة.
+                               الرجاء اختيار 5 رغبات عند تسجيل الرغبات
                             </p>
                         </article>
                     </aside>
-                    <aside>
-                        <article class="sidebar1" dir="rtl" style="margin-bottom: 0%;">
-                            <h2 class="title-side">تنبيه خاص </h2>
-                            <p class="post-side">
-                                - عند إنشاء حساب جديد الوزارة
-                                سيتم عرض معلوات والشواغر والشروط إضافة
-                                خاصة بالوزارة على الصفحة المسؤول .
-                            </p>
-                        </article>
-                    </aside>
+                    
                 </div>
 
                 <!--FOOTER-->

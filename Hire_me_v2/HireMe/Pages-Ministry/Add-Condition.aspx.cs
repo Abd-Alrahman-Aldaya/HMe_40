@@ -8,7 +8,14 @@ namespace HireMe.Pages_Ministry
         Data_Access da = new Data_Access();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+
+            if (Session["id_ministry"] == null)
+            {
+                Response.Redirect("~/HireMe/Home.aspx");
+                return;
+            }
+
+                if (!IsPostBack)
             {
 
                 int? id_min = Convert.ToInt32(Session["id_ministry"]);
@@ -47,6 +54,14 @@ namespace HireMe.Pages_Ministry
         protected void function_btn_Add_Condition(object sender, EventArgs e)
         {
 
+
+            if (type_condition_new.Items.Count == 0)
+            {
+                Response.Write("<script>alert('الإختيار فارغ ')</script>");
+                return;
+            }
+
+
             C_HireMe check = new C_HireMe();
             if (check.check_string(name_condition_new.Text) == false)
             {
@@ -54,13 +69,12 @@ namespace HireMe.Pages_Ministry
                 lab_error.Text = "input null or contain(-,<,;)";
                 return;
             }
-            //string q_vac_con =""
-           // if (check.double_check();
+
             var condation_name = name_condition_new.Text;
             var condition_type = type_condition_new.SelectedValue;
             var vacncy_id = type_specialization_for_cond.SelectedValue;
             da.open_connection();
-            da.EX_Non_Query_Insert("insert into tb_emp_condition (emp_condition_name,emp_condition_type,id_vacancy,vacancy_check_count) values('" + condation_name + "','"+condition_type+"',"+ vacncy_id + ",0)");
+            da.EX_Non_Query_Insert("insert into tb_emp_condition (emp_condition_name,emp_condition_type,id_vacancy,result_condition) values('" + condation_name + "','"+condition_type+"',"+ vacncy_id + ",0)");
             da.close_connection();
         }
 

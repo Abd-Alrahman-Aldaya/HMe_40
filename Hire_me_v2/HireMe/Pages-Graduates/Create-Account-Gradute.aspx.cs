@@ -17,7 +17,14 @@ namespace HireMe.Pages_Graduates
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            das = new Data_Access();
+            //int state = Convert.ToInt32(Application["state_site"]);
+            //if (state != 1)
+            //{
+            //    Response.Redirect("~/HireMe/Home.aspx");
+            //    return;
+            //}
+
+                das = new Data_Access();
             if (!IsPostBack)
             {
                 var dt_U_Name = das.SelectData("select university_name from tb_university  where university_country ='damas' group by university_name");
@@ -28,78 +35,78 @@ namespace HireMe.Pages_Graduates
                 lab_error.Text = " ";
             }
 
-
         }
         protected void function_Create_Account_Next(object sender, EventArgs e)
         {
 
             C_HireMe check = new C_HireMe();
-            // if(check.check_string(id_number_gradute.Text) ==false)
-            //{
-            //    lab_error.Text = "input null or contain(-,<,;)";
-            //    return;
-            //}
+            if (check.check_string(id_number_gradute.Text) == false)
+            {
+                lab_error.Text = "input idNumber null or contain(-,<,;)";
+                return;
+            }
 
-            //if(check.check_string(first_name_gradute.Text) ==false)
-            //{
-            //    lab_error.Text = "input null or contain(-,<,;)";
-            //    return;
-            //}
+            if (check.check_string(first_name_gradute.Text) == false)
+            {
+                lab_error.Text = "input first name null or contain(-,<,;)";
+                return;
+            }
 
-            // if(check.check_string(last_name_gradute.Text) ==false)
-            //{
-            //    lab_error.Text = "input null or contain(-,<,;)";
-            //    return;
-            //}
+            if (check.check_string(last_name_gradute.Text) == false)
+            {
+                lab_error.Text = "input last name null or contain(-,<,;)";
+                return;
+            }
 
-            // if(check.check_string(fname_gradute.Text) ==false)
-            //{
-            //    lab_error.Text = "input null or contain(-,<,;)";
-            //    return;
-            //}
+            if (check.check_string(fname_gradute.Text) == false)
+            {
+                lab_error.Text = "input name father null or contain(-,<,;)";
+                return;
+            }
 
-            // if(check.check_string(mname_gradute.Text) ==false)
-            //{
-            //    lab_error.Text = "input null or contain(-,<,;)";
-            //    return;
-            //}
+            if (check.check_string(mname_gradute.Text) == false)
+            {
+                lab_error.Text = "input name mather null or contain(-,<,;)";
+                return;
+            }
 
-            // if(check.check_string(avg_gradute.Text) ==false)
-            //{
-            //    lab_error.Text = "input null or contain(-,<,;)";
-            //    return;
-            //}
+            if (check.check_string(avg_gradute.Text) == false)
+            {
+                lab_error.Text = "input avg null or contain(-,<,;)";
+                return;
+            }
 
-            // if(check.check_string(pass_gradute_new.Text) ==false)
-            //{
-            //    lab_error.Text = "input null or contain(-,<,;)";
-            //    return;
-            //}
+            if (check.check_string(pass_gradute_new.Text) == false)
+            {
+                lab_error.Text = "input password null or contain(-,<,;)";
+                return;
+            }
 
-            // if(check.check_string(phone_gradute.Text) ==false)
-            //{
-            //    lab_error.Text = "input null or contain(-,<,;)";
-            //    return;
-            //}
+            if (check.check_string(phone_gradute.Text) == false)
+            {
+                lab_error.Text = "input phone null or contain(-,<,;)";
+                return;
+            }
 
-            // if(check.check_string(email_gradute_new.Text) ==false)
-            //{
-            //    lab_error.Text = "input null or contain(-,<,;)";
-            //    return;
-            //}
+            if (check.check_string(email_gradute_new.Text) == false)
+            {
+                lab_error.Text = "input email null or contain(-,<,;)";
+                return;
+            }
 
-            // if(check.check_string(date_gradute.Text) ==false)
-            //{
-            //    lab_error.Text = "input null or contain(-,<,;)";
-            //    return;
-            //}
-
+            if (Convert.ToInt32(avg_gradute.Text) > 100)
+            {
+                lab_error.Text = "يجب معدل اقل من 100";
+            }
+            if (Convert.ToInt32(avg_gradute.Text) < 49)
+            {
+                lab_error.Text = "يجب معدل اكبر من 50";
+            }
 
             if (check.check_Email(email_gradute_new.Text, "select graduate_email from tb_graduate ") == false)
             {
                 lab_error.Text = "email excist";
                 return;
-
             }
 
             if (check.check_Email(id_number_gradute.Text, "select graduate_id_number from tb_graduate ") == false)
@@ -107,10 +114,11 @@ namespace HireMe.Pages_Graduates
                 lab_error.Text = "id number excist";
                 return;
             }
-            
+
 
             das = new Data_Access();
-            string q = "insert into tb_graduate values('" + id_number_gradute.Text+ "','" + first_name_gradute.Text + "','"+last_name_gradute.Text+"','" + fname_gradute.Text + "','" + mname_gradute.Text + "','" + date_gradute.Text + "'," + avg_gradute.Text + ",'" + DDL_specialization_gradute.SelectedItem + "','"+ university_country.SelectedValue + "' ,'" + DDL_country_gradute.SelectedValue + "','0','" + email_gradute_new.Text + "','" + pass_gradute_new.Text + "',0)";
+            string Encrypted_pass = C_HireMe.Encrypt(pass_gradute_new.Text, 5);
+            string q = "insert into tb_graduate values('" + id_number_gradute.Text + "','" + first_name_gradute.Text + "','" + last_name_gradute.Text + "','" + fname_gradute.Text + "','" + mname_gradute.Text + "','" + date_gradute.Text + "'," + avg_gradute.Text + ",'" + DDL_specialization_gradute.SelectedItem + "','" + university_country.SelectedValue + "' ,'" + DDL_country_gradute.SelectedValue + "','0','" + email_gradute_new.Text + "','" + Encrypted_pass + "',0)";
             das.open_connection();
             das.EX_Non_Query(q);
             string q_id_grad = "select id_graduate from tb_graduate where graduate_id_number='" + id_number_gradute.Text + "';";

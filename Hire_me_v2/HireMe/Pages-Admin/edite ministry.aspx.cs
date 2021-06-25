@@ -14,6 +14,13 @@ namespace HireMe.Pages_ministry
         Data_Access ds;
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["id_admin"] == null)
+            {
+                Response.Redirect("~/HireMe/Home.aspx");
+                return;
+            }
+
             string q = "select ministry_name from tb_ministry ";
             if (!IsPostBack)
             {
@@ -29,6 +36,12 @@ namespace HireMe.Pages_ministry
 
         protected void btn_update_Click(object sender, EventArgs e)
         {
+
+            if (DropDown_ministry.Items.Count == 0)
+            {
+                Response.Write("<script>alert('الإختيار فارغ ')</script>");
+                return;
+            }
 
             C_HireMe check = new C_HireMe();
             if (check.check_string(new_name_ministrty.Text)==false)
@@ -57,6 +70,13 @@ namespace HireMe.Pages_ministry
 
         protected void btn_remove_Click(object sender, EventArgs e)
         {
+
+            if (DropDown_ministry.Items.Count == 0)
+            {
+                Response.Write("<script>alert('الإختيار فارغ ')</script>");
+                return;
+            }
+
             ds = new Data_Access();
             ds.open_connection();
             string remove = "delete from tb_ministry where ministry_name='"+ DropDown_ministry.SelectedValue+"'";

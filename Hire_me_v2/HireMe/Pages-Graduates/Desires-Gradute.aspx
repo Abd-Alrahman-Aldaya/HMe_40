@@ -71,8 +71,7 @@
 
                          <br />
                          <br />
-                         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                         <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+                         <asp:Label ID="lab_error" runat="server" Text="*" Font-Size="20px" ForeColor="Red"></asp:Label>
                          <br />
 
                          <div class="btn">

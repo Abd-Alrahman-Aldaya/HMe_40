@@ -16,8 +16,15 @@ namespace Hire_me_v2.HireMe.Pages_Graduates
         int id_graduate;
         protected void Page_Load(object sender, EventArgs e)
         {
-             id_graduate = Convert.ToInt32(Session["id_student"]);
-            //id_graduate = 4;
+
+            if (Session["id_student"] == null)
+            {
+                Response.Redirect("~/HireMe/Home.aspx");
+                return;
+            }
+
+            id_graduate = Convert.ToInt32(Session["id_student"]);
+            
             das = new Data_Access();
             if (!IsPostBack)
             {
@@ -84,9 +91,7 @@ namespace Hire_me_v2.HireMe.Pages_Graduates
                 lab_error.Text = "input null or contain(-,<,;)";
                 return;
             }
-
-
-
+            
 
             das = new Data_Access();
             string q = "update tb_graduate set graduate_id_number ='" + id_number_gradute.Text + "',graduate_first_name='" + first_name_gradute.Text + "',graduate_last_name='" + last_name_gradute.Text + "',graduate_father_name='" + fname_gradute.Text + "',graduate_mother_name='" + mname_gradute.Text + "',graduate_date='" + date_gradute.Text + "',graduate_avg=" + avg_gradute.Text + ", graduate_profession='" + DDL_specialization_gradute.SelectedItem + "',graduate_university_country='" + university_country.SelectedValue + "',graduate_resident_country='" + DDL_country_gradute.SelectedValue + "',graduate_check='0' where id_graduate="+id_graduate+";";

@@ -103,7 +103,6 @@
     <Content Include="HireMe\Pages-Graduates\CSS\Style1-Gradute.css" />
     <Content Include="HireMe\Pages-Graduates\Desires-Gradute.aspx" />
     <Content Include="HireMe\Pages-Graduates\recive_message.aspx" />
-    <Content Include="HireMe\Pages-Graduates\result display.aspx" />
     <Content Include="HireMe\Pages-Graduates\Result-Gradute.aspx" />
     <Content Include="HireMe\Pages-Graduates\update_gardue.aspx" />
     <Content Include="HireMe\Pages-Ministry\Add-Condition.aspx" />
@@ -137,7 +136,6 @@
     <Content Include="HireMe\tarek\page html\add students.html" />
     <Content Include="HireMe\tarek\page html\display university.html" />
     <Content Include="HireMe\tarek\page html\university administration.html" />
-    <Content Include="HireMe\test.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -194,13 +192,6 @@
     </Compile>
     <Compile Include="HireMe\Pages-Graduates\recive_message.aspx.designer.cs">
       <DependentUpon>recive_message.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="HireMe\Pages-Graduates\result display.aspx.cs">
-      <DependentUpon>result display.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="HireMe\Pages-Graduates\result display.aspx.designer.cs">
-      <DependentUpon>result display.aspx</DependentUpon>
     </Compile>
     <Compile Include="HireMe\Pages-Graduates\Result-Gradute.aspx.cs">
       <DependentUpon>Result-Gradute.aspx</DependentUpon>
@@ -293,13 +284,6 @@
     <Compile Include="HireMe\Pages-Universities\send message.aspx.designer.cs">
       <DependentUpon>send message.aspx</DependentUpon>
     </Compile>
-    <Compile Include="HireMe\test.aspx.cs">
-      <DependentUpon>test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="HireMe\test.aspx.designer.cs">
-      <DependentUpon>test.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -349,6 +333,7 @@
     <Content Include="HireMe\tarek\fontawesome\fonts\fontawesome-webfont.woff2" />
     <Content Include="HireMe\tarek\fontawesome\fonts\FontAwesome.otf" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

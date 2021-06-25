@@ -13,6 +13,15 @@ namespace HireMe.Pages_Ministry
             Data_Access da = new Data_Access();
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["id_ministry"] == null)
+            {
+                Response.Redirect("~/HireMe/Home.aspx");
+                return;
+            }
+
+
+
             var specialization = da.SelectData("select university_name from tb_university group by university_name ");
             if (!IsPostBack)
             {
@@ -75,6 +84,7 @@ namespace HireMe.Pages_Ministry
                 lab_error.Text = "input null or contain(-,<,;)";
                 return;
             }
+
             string q = "select vacancy_name,vacancy_type from tb_vacancy";
             if (check.double_check(name_specialization_new.SelectedValue, type_specialization_new.SelectedValue, q)==false)
             {
@@ -89,7 +99,7 @@ namespace HireMe.Pages_Ministry
             var type = type_specialization_new.SelectedValue;
             int id_ministry = Convert.ToInt32(Session["id_ministry"]);
             da.open_connection();
-            da.EX_Non_Query_Insert("insert into tb_vacancy(vacancy_count,vacancy_avg,vacancy_name,vacancy_type,id_ministry) values(" + count+","+avg+",'"+name+"','"+type+"',"+id_ministry+")");
+            da.EX_Non_Query_Insert("insert into tb_vacancy(vacancy_count,vacancy_avg,vacancy_name,vacancy_type,id_ministry,vacancy_check_count) values(" + count+","+avg+",'"+name+"','"+type+"',"+id_ministry+",0)");
             da.open_connection();
 
             lab_error.Text = " ";

@@ -18,28 +18,23 @@ namespace Hire_me_v2.HireMe.Pages_Universities
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Session["id_university"] == null)
+            {
+                Response.Redirect("~/HireMe/Home.aspx");
+                return;
+            }
 
              int id_univer = Convert.ToInt32(Session["id_university"]);
-            //int id_univer = 1;
-
             string q = "select * from tb_university where id_university =" + id_univer + "";
             
-
             das = new Data_Access();
             var dt_uni = das.SelectData(q);
 
-            //GridView1.DataSource = dt_uni;
-            //GridView1.DataBind();
-
              name_uni = dt_uni.Rows[0][2].ToString();
-            //lab_error.Text= dt_uni.Rows[0][2].ToString();
-           // lab_error.Text= dt_uni.Rows[0][5].ToString();
              country_uni = dt_uni.Rows[0][5].ToString();
 
-
            var dt_spec_gra= das.SelectData("select * from tb_graduate where graduate_profession='"+name_uni+ "' and graduate_university_country='"+country_uni+"' and graduate_check=0");
-            //GridView1.DataSource = dt_spec_gra;
-            //GridView1.DataBind();
+            
             if (dt_spec_gra.Rows.Count == 0)
             {
                 lab_id_number_grdute.Text = "finish";
@@ -166,35 +161,35 @@ namespace Hire_me_v2.HireMe.Pages_Universities
             string message=" ";
             if (CheckBox_id_num.Checked == false)
             {
-                message += "id_number,";
+                message += "خطأ بالرقم الوطني,";
             }
             if (CheckBox_FNmae.Checked == false)
             {
-                message += "first name,";
+                message += "خطأ بالاسم الأول ";
             }
             if (CheckBox_LNmae.Checked == false)
             {
-                message += "last name,";
+                message += "خطأ بالاسم الثاني ,";
             }
             if (CheckBox_fa_name.Checked == false)
             {
-                message += "father name,";
+                message += "خطأ بأسم الأب ,";
             }
             if (CheckBox_mather_name.Checked == false)
             {
-                message += "mather name,";
+                message += "خطأ بالسم الأم ,";
             }
             if (CheckBox_avg.Checked == false)
             {
-                message += "worng avg,";
+                message += "خطأ بالمعدل,";
             }
             if (CheckBox_porn.Checked == false)
             {
-                message += "worng porn";
+                message += "خطأ بتاريخ الولادة ";
             }
             if (CheckBox_prof.Checked == false)
             {
-                message += "worng prof";
+                message += "خطأ بالإختصاص";
             }
 
             if (CheckBox_shd.Checked)
@@ -219,9 +214,6 @@ namespace Hire_me_v2.HireMe.Pages_Universities
             lab_error.Text = " ";
             CheckBox_checkall.Checked = false;
             Response.Redirect($"~/HireMe/Pages-Universities/send message.aspx?id={id_grad} &message={message}");
-            //Response.Redirect($"~/HireMe/Pages-Universities/send message.aspx?message={message}");
-            //   Response.Redirect($"edite_stu.aspx?Email={student_email}");
-
         }
 
         protected void CheckBox_checkall_CheckedChanged(object sender, EventArgs e)
@@ -234,8 +226,6 @@ namespace Hire_me_v2.HireMe.Pages_Universities
             CheckBox_mather_name.Checked=true;
             CheckBox_porn.Checked = true;
             CheckBox_prof.Checked = true;
-           
-
         }
     }
 }

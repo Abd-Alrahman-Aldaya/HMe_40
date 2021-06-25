@@ -14,12 +14,21 @@ namespace HireMe.Pages_Ministry
         Data_Access das;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //if (Session["id_ministry"] == null)
+            //{
+            //    Response.Redirect("~/HireMe/Home.aspx");
+            //    return;
+            //}
+
+
+
             if (!IsPostBack)
             {
-                das = new Data_Access();
-                id_session_min =Convert.ToInt32(Session["id_ministry"]);
 
-                var dt_uvsn = das.SelectData("select emp_condition_name from tb_emp_condition;");
+                das = new Data_Access();
+                id_session_min = Convert.ToInt32(Session["id_ministry"]);
+
+                var dt_uvsn = das.SelectData("select emp_condition_name from tb_emp_condition e,tb_vacancy v, tb_ministry m where e.id_vacancy=v.id_vacancy and m.id_ministry=v.id_ministry and m.id_ministry =" + id_session_min + ";");
 
                 name_condition.DataSource = dt_uvsn;
                 name_condition.DataTextField = "emp_condition_name";
@@ -56,6 +65,18 @@ namespace HireMe.Pages_Ministry
         protected void function_btn_Save_Condition(object sender, EventArgs e)
         {
 
+            if (name_condition.Items.Count == 0)
+            {
+                Response.Write("<script>alert('الإختيار فارغ ')</script>");
+                return;
+            }
+
+            //if (name_condition.SelectedValue == " " || name_condition.SelectedValue == null) 
+            //{
+            //    Response.Write("<script>alert('الإختيار فارغ ')</script>");
+            //    return;
+            //}
+
             C_HireMe check = new C_HireMe();
             if (check.check_string(name_condition_new_add.Text) == false)
             {
@@ -75,6 +96,11 @@ namespace HireMe.Pages_Ministry
         }
         protected void function_btn_Remove_Condition(object sender, EventArgs e)
         {
+            if (name_condition.Items.Count == 0 )
+            {
+                Response.Write("<script>alert('الإختيار فارغ ')</script>");
+                return;
+            };
             das = new Data_Access();
             das.open_connection();
             var EdNum = das.EX_Non_Query("delete from tb_emp_condition where emp_condition_name='" + name_condition.SelectedValue + "' ");

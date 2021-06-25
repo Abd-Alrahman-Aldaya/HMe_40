@@ -9,6 +9,108 @@
     font-family: Gigi;
     animation: hireme 1s ease-in infinite;
 }
+.dropministry
+{
+    display: none;
+}
+    /*admin*/
+.adm {
+    background-color: darkblue;
+    color: white;
+    direction: rtl;
+    margin-left: 860px;
+    margin-top: -22px;
+    padding-bottom: 50px;
+}
+
+.count2, .count3, .count4 {
+    margin-top: 20px;
+    display: none;
+}
+
+    .count2 .bn1, .count3 .bn1, .count4 .bn1 {
+        color: white;
+        background-color: #14213D;
+        padding: 0px 25px;
+        height: 40px;
+        text-align: center;
+    }
+
+    .count3 .bn1 {
+        padding: 0px 40px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+        .count2 .bn1:hover, .count3 .bn1:hover, .count4 .bn1:hover {
+            border-bottom-right-radius: 40%;
+            border-top-right-radius: 40%;
+        }
+
+.li1 {
+    margin-top: 60px;
+}
+
+.adm li:hover {
+    margin-right: 6px;
+    font-size: 25px;
+    color: black;
+}
+
+.li1 {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.G1 {
+    width: 200px;
+}
+
+.fu1, .gradvi {
+    position: absolute;
+    top: 451px;
+    left: 300px;
+    background-color: #eee;
+    padding-left: 100px;
+    height: 500px;
+    padding-right: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.fu1 {
+    display: none;
+}
+
+.gradvi {
+    width: 500px;
+    left: 300px
+}
+
+.alwezara {
+    height: 100px;
+    direction: rtl;
+    padding-top: 70px;
+    margin-left: 740px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 400px;
+}
+
+.univer1, .min1 {
+    font-size: 20px;
+}
+
+.stop, .open {
+    background-color: #14213D;
+    margin-right: 10px;
+    outline: hidden;
+    font-size: 21px;
+    font-weight: bolder;
+    padding-bottom: 10px;
+    border: solid 1px #14213D;
+}
 
 .home {
     direction: rtl;
@@ -1175,6 +1277,8 @@ body {
     height: 30px;
     vertical-align: central;
     margin-left: 11px;
+    top: 8px;
+    right: 0px;
 }
 .dropministry {
     width: 300px;

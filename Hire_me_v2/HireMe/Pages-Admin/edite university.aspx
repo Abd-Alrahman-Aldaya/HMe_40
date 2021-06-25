@@ -12,7 +12,6 @@
     <link href="../tarek/css/tarek-style.css" rel="stylesheet" />
     <style>
       
-       
     </style>
 </head>
 
@@ -32,9 +31,9 @@
               <div class="col-xs-12 text-center" dir="rtl">
                 <br />
                   <label class="upminisrty">الجامعة</label><br />
-                  <asp:DropDownList ID="DropDown_university" runat="server" class="dropministry form-control" DataTextField="university_name" DataValueField="university_name"></asp:DropDownList><br />
-                  <asp:Label ID="Label1" runat="server" class="upminisrty" Text="الاسم الجديد"></asp:Label><br />
-                  <asp:TextBox ID="new_name_university" runat="server"></asp:TextBox>&nbsp;&nbsp;
+                  <asp:DropDownList ID="DropDown_university" runat="server" class="dropministry form-control" DataTextField="university_name" DataValueField="university_name"></asp:DropDownList><br /><br />
+                   <label class="upminisrty">الاسم الجديد</label><br /> 
+                  <asp:TextBox ID="new_name_university" class="dropministry form-control" runat="server"></asp:TextBox>&nbsp;&nbsp;<br />
                   <asp:Label ID="lab_error" runat="server" Font-Size="20px" ForeColor="Red" Text="*"></asp:Label>
                   <br />
               </div><br /><br /><br /><br /><br /><br />

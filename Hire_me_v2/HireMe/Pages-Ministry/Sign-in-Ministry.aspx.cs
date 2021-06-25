@@ -18,6 +18,19 @@ namespace HireMe.Pages_Ministry
 
         protected void function_SignUp(object sender, EventArgs e)
         {
+            C_HireMe c = new C_HireMe();
+            if (c.check_string(Login_Email.Text) == false)
+            {
+                Response.Write("<script>alert('حقل إيميل فارغ او يحتوي رموز غير صالحة ')</script>");
+                return;
+            }
+            if (c.check_string(Login_Password.Text) == false)
+            {
+                Response.Write("<script>alert('حقل كلمة السر فارغ او يحتوي رموز غير صالحة')</script>");
+                return;
+            }
+
+
             string stu_login_info = "select id_graduate,graduate_email,graduate_password from tb_graduate;";
             var data_stu_login_info = da.SelectData(stu_login_info);
             string admin_login_info = "select id_admin,admin_email,admin_password from tb_admin;";
@@ -33,6 +46,7 @@ namespace HireMe.Pages_Ministry
 
                 if (data_admin_login_info.Rows[i][1].ToString() == entered_email)
                 {
+                    data_admin_login_info.Rows[i][2] = C_HireMe.Decrypt(data_admin_login_info.Rows[i][2].ToString(), 5);
                     if (data_admin_login_info.Rows[i][2].ToString() == entered_password)
                     {
                         Login_Email.Text = "";
@@ -48,6 +62,7 @@ namespace HireMe.Pages_Ministry
 
                 if (data_ministry_login_info.Rows[i][1].ToString() == entered_email)
                 {
+                    data_ministry_login_info.Rows[i][2] = C_HireMe.Decrypt(data_ministry_login_info.Rows[i][2].ToString(), 5);
                     if (data_ministry_login_info.Rows[i][2].ToString() == entered_password)
                     {
                         Login_Email.Text = "";
@@ -63,6 +78,7 @@ namespace HireMe.Pages_Ministry
 
                 if (data_university_login_info.Rows[i][1].ToString() == entered_email)
                 {
+                    data_university_login_info.Rows[i][2] = C_HireMe.Decrypt(data_university_login_info.Rows[i][2].ToString(), 5);
                     if (data_university_login_info.Rows[i][2].ToString() == entered_password)
                     {
                         Login_Email.Text = "";
@@ -78,12 +94,24 @@ namespace HireMe.Pages_Ministry
 
                 if (data_stu_login_info.Rows[i][1].ToString() == entered_email)
                 {
+                    data_stu_login_info.Rows[i][2] = C_HireMe.Decrypt(data_stu_login_info.Rows[i][2].ToString(), 5);
                     if (data_stu_login_info.Rows[i][2].ToString() == entered_password)
                     {
                         Login_Email.Text = "";
                         Login_Password.Text = "";
                         Session["id_student"] = data_stu_login_info.Rows[i][0].ToString();
-                        Response.Redirect("~/HireMe/Pages-Graduates/recive_message.aspx");
+
+                        int state = Convert.ToInt32(Application["state_site"]);
+                        if (state == 2)
+                        {
+                            Response.Redirect("~/HireMe/Pages-Graduates/recive_message.aspx");
+                            return;
+                        }
+                        if (state == 3)
+                        {
+                            Response.Redirect("~/HireMe/Pages-Graduates/Result-Gradute.aspx");
+                        }
+
                         return;
                     }
                 }

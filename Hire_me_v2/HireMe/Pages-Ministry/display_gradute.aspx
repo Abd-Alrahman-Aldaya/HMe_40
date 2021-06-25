@@ -13,14 +13,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        .grid{
-            margin-left:100px;
-            text-align:right;
-        }
+        
+        
+       
     </style>
 
 </head>
-<body class="body">
+<body class="body" style="width:90%;">
    <form id="form_All_View" runat="server">
         <div>
 
@@ -46,10 +45,10 @@
                     <br />
                     <br />
 
-                    <section class="post-document">
+                    <section class="post-document" style="width:100%; margin-top:10%;">
 
                         <div class="post-form">
-                            <asp:GridView ID="GridView_All" Width="427px" Height="232px" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" CssClass="grid"  >
+                            <asp:GridView ID="GridView_All"    runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" CssClass="gradvi"  >
                                 <AlternatingRowStyle BackColor="Gainsboro" />
                                 <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                                 <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
@@ -62,18 +61,6 @@
                                 <SortedDescendingHeaderStyle BackColor="#000065" />
                             </asp:GridView>
 
-        <%--                          <dl id="dl_vac" runat="server">
-                                    <dt id="dt_vac">
-                                         <ul><li id="li_vac" runat="server"></li></ul>
-                                    </dt>
-                                     <dd id="dd_con" runat="server">
-                                          <ul><li id="li_con" runat="server"></li></ul>
-                                     </dd>
-
-                                  </dl>--%>
-                          
-                            
-                          
                         </div>
                         <br />
                         <br />
@@ -111,9 +98,7 @@
                         <p class="title-footer">جميع حقوق محفوظة لموقع مفاضلة المهندسين الالكترونية - 2021</p>
                     </div>
             </footer>
-
             <script src="../js/icons.js"></script>
-
         </div>
     </form>
 

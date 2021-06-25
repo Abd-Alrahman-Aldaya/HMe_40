@@ -32,10 +32,10 @@
               <div class="col-xs-12 text-center" dir="rtl">
                 <br />
                   <label class="upminisrty">الوزارة</label><br />
-                  <asp:DropDownList ID="DropDown_ministry" runat="server" class="dropministry form-control" DataTextField="ministry_name" DataValueField="ministry_name" AutoPostBack="True"></asp:DropDownList><br />
-                  <asp:Label ID="Label1" runat="server" class="upminisrty" Text="الاسم الجديد"></asp:Label><br />
-                  <asp:TextBox ID="new_name_ministrty" runat="server"></asp:TextBox>&nbsp;
-                  <asp:Label ID="lab_error" runat="server" Font-Size="20px" ForeColor="Red" Text="*"></asp:Label>
+                  <asp:DropDownList ID="DropDown_ministry" runat="server" class="dropministry form-control" DataTextField="ministry_name" DataValueField="ministry_name" AutoPostBack="True"></asp:DropDownList><br /><br />
+                      <label class="upminisrty">الاسم الجديد</label><br />
+                  <asp:TextBox ID="new_name_ministrty" class="dropministry form-control" runat="server" ></asp:TextBox>
+                  <asp:Label ID="lab_error" runat="server" Font-Size="20px" ForeColor="Red" Text="*"></asp:Label>&nbsp;&nbsp;<br /><br />
                   <br />
               </div><br /><br /><br /><br /><br /><br />
              

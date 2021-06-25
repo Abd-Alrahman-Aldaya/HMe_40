@@ -25,6 +25,7 @@
 
 //}
 /*admin*/
+
 function trans1() {
     var r = document.getElementById("tru1");
 
@@ -173,6 +174,19 @@ $(".cn3").click(function () {
 
 
 });
+let sm3 = 0;
+$(".cn4").click(function () {
+    if (sm3 == 0) {
+        $(".count4").fadeIn(1000);
+        sm3 = 1;
+    }
+    else if (sm3 == 1) {
+        $(".count4").fadeOut(1000);
+        sm3 = 0;
+    }
+
+
+});
 let min = 0;
 $(".count3 .bn1").click(function () {
     if (min == 0) {
@@ -187,3 +201,4 @@ $(".count3 .bn1").click(function () {
 
 
 })
+$(".dropministry").fadeIn(1000);
