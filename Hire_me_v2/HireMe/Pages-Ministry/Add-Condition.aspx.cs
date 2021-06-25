@@ -17,9 +17,8 @@ namespace HireMe.Pages_Ministry
 
                 if (!IsPostBack)
             {
-
                 int? id_min = Convert.ToInt32(Session["id_ministry"]);
-                var vacancy_name = da.SelectData("select id_vacancy,vacancy_name from tb_vacancy where id_ministry="+id_min+";");
+                var vacancy_name = da.SelectData("select id_vacancy,vacancy_name from tb_vacancy where id_ministry=" + id_min + ";");
                 type_specialization_for_cond.DataSource = vacancy_name;
                 type_specialization_for_cond.DataTextField = "vacancy_name";
                 type_specialization_for_cond.DataValueField = "id_vacancy";
@@ -53,6 +52,7 @@ namespace HireMe.Pages_Ministry
         //-----------------------------------ButtonEvent-------------------------------------//
         protected void function_btn_Add_Condition(object sender, EventArgs e)
         {
+<<<<<<< HEAD
 
 
             if (type_condition_new.Items.Count == 0)
@@ -70,6 +70,8 @@ namespace HireMe.Pages_Ministry
                 return;
             }
 
+=======
+>>>>>>> eab5a12777f2c43e3294ac0a4d9777c7377f7031
             var condation_name = name_condition_new.Text;
             var condition_type = type_condition_new.SelectedValue;
             var vacncy_id = type_specialization_for_cond.SelectedValue;

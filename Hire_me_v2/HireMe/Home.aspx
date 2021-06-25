@@ -39,27 +39,43 @@
 
                             <ul>
                                 <li>
+<<<<<<< HEAD
                                     <a href="#">
                                         <%--<h3 class="title-login links"><i class="fa fa-chevron-left icon"></i> تسجيل معلومات  </h3>--%>
+=======
+                                    <a href="#" runat="server" onserverclick="function_link_sign_info">
+                                        <h3 class="title-login links"><i class="fa fa-chevron-left icon"></i> تسجيل معلومات  </h3>
+>>>>>>> eab5a12777f2c43e3294ac0a4d9777c7377f7031
                                     </a>
                                     <i class="fa fa-chevron-left icon"></i>
                                     <asp:Button ID="btn_enter" runat="server"  CssClass="title-login button" Text="تسجيل معلومات" OnClick="btn_enter_Click" />
                                 </li>
 
                                 <li>
+<<<<<<< HEAD
                                     <a href="#">
                                         <%--<h3 class="title-login links"><i class="fa fa-chevron-left icon"></i> تحقق معلومات  </h3>--%>
+=======
+                                    <a href="#" runat="server" onserverclick="function_link_check_info">
+                                        <h3 class="title-login links"><i class="fa fa-chevron-left icon"></i> تحقق معلومات  </h3>
+>>>>>>> eab5a12777f2c43e3294ac0a4d9777c7377f7031
                                     </a>
                                     <i class="fa fa-chevron-left icon"></i>
                                     <asp:Button ID="btn_check" runat="server" CssClass="title-login button" Text="التحقق من وجود خطأ " OnClick="btn_check_Click" />
                                 </li>
 
                                 <li>
+<<<<<<< HEAD
                                    
                                         <%--<h3 class="title-login links" runat="server" onclick="fun"><i class="fa fa-chevron-left icon" ></i>إظهار النتيجة  </h3>--%>
                                     <i class="fa fa-chevron-left icon"></i>
                                     <asp:Button ID="btn_result" runat="server" CssClass="title-login button" Text="إظهار النتيجة " OnClick="btn_result_Click"  />
                                   
+=======
+                                    <a href="#" runat="server" onserverclick="function_link_view_result">
+                                        <h3 class="title-login links"><i class="fa fa-chevron-left icon"></i>إظهار النتيجة  </h3>
+                                    </a>
+>>>>>>> eab5a12777f2c43e3294ac0a4d9777c7377f7031
                                 </li>
                             </ul>
 

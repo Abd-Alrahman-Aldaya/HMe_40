@@ -1,10 +1,10 @@
-﻿using HireMe.Class;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using HireMe.Class;
+using System;
 
 namespace Hire_me_v2.HireMe.Pages_Universities
 {
@@ -25,16 +25,29 @@ namespace Hire_me_v2.HireMe.Pages_Universities
             }
 
              int id_univer = Convert.ToInt32(Session["id_university"]);
+<<<<<<< HEAD
+=======
+
+>>>>>>> eab5a12777f2c43e3294ac0a4d9777c7377f7031
             string q = "select * from tb_university where id_university =" + id_univer + "";
             
             das = new Data_Access();
             var dt_uni = das.SelectData(q);
 
+<<<<<<< HEAD
              name_uni = dt_uni.Rows[0][2].ToString();
+=======
+
+             name_uni = dt_uni.Rows[0][2].ToString();;
+>>>>>>> eab5a12777f2c43e3294ac0a4d9777c7377f7031
              country_uni = dt_uni.Rows[0][5].ToString();
 
            var dt_spec_gra= das.SelectData("select * from tb_graduate where graduate_profession='"+name_uni+ "' and graduate_university_country='"+country_uni+"' and graduate_check=0");
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> eab5a12777f2c43e3294ac0a4d9777c7377f7031
             if (dt_spec_gra.Rows.Count == 0)
             {
                 lab_id_number_grdute.Text = "finish";

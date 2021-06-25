@@ -43,7 +43,7 @@
                        <h1 class="title-post">تسجيل الدخول </h1>
                    </header> 
             
-                   <h3 class="title-login"><i class="fa fa-chevron-left icon" ></i>ادخل البريد الكتروني وكلمة المرور خاص بك.</h3>  
+                   <h3 class="title-login" style="font-size:25px;"><i class="fa fa-chevron-left icon" ></i>ادخل البريد الكتروني وكلمة المرور خاص بك.</h3>  
                     
                     <section class="post-document">
 
@@ -81,7 +81,7 @@
                         <p> هل تريد إنشاء حساب <i class="fa fa-question-circle icon" style=""></i></p>
                         <div class="btn">
                             <%--<asp:Button ID="btn_create" CssClass="button" runat="server" Text=" إنشاء " /><i class="fas fa-plus icon-btn"></i>--%>
-                            <button runat="server" id="btn_to_create" class="button" onserverclick="function_Create_Account" title="Creare_Account" ><i class="fas fa-plus icon-btn"></i> إنشاء </button>
+                            
                         </div>
                     </div>
             -->
